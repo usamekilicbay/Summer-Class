@@ -10,7 +10,7 @@
         </div>
         <br />
         <div>
-            <asp:Label ID="LBL_StudentID" for="DDLIST_StudentIDs" runat="server" Text="Student ID"></asp:Label>
+            <asp:Label ID="LBL_StudentIDs" for="DDLIST_StudentIDs" runat="server" Text="Student ID"></asp:Label>
             <asp:DropDownList ID="DDLIST_StudentIDs" runat="server" CssClass="form-control"></asp:DropDownList>
         </div>
         <br />

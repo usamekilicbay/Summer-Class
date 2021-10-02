@@ -10,7 +10,7 @@ namespace BusinessLogicLayer
 {
     public class ClassBusinessLogic
     {
-        public static List<EntityClass> GetEntityClassList()
+        public static List<EntityClass> GetClassList()
         {
             return ClassDataAccess.GetClassList();
         }

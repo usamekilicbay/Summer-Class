@@ -33,13 +33,13 @@ namespace SummerClass
         protected global::System.Web.UI.WebControls.DropDownList DDLIST_ClassIDs;
 
         /// <summary>
-        /// LBL_StudentID control.
+        /// LBL_StudentIDs control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_StudentID;
+        protected global::System.Web.UI.WebControls.Label LBL_StudentIDs;
 
         /// <summary>
         /// DDLIST_StudentIDs control.
