@@ -67,7 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ClassAppeal.aspx" />
+    <Content Include="ClassDelete.aspx" />
     <Content Include="ClassList.aspx" />
+    <Content Include="ClassUpdate.aspx" />
     <Content Include="StudentCreate.aspx" />
     <Content Include="StudentDelete.aspx" />
     <Content Include="StudentList.aspx" />
@@ -75,12 +78,33 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassAppeal.aspx.cs">
+      <DependentUpon>ClassAppeal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassAppeal.aspx.designer.cs">
+      <DependentUpon>ClassAppeal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassDelete.aspx.cs">
+      <DependentUpon>ClassDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassDelete.aspx.designer.cs">
+      <DependentUpon>ClassDelete.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ClassList.aspx.cs">
       <DependentUpon>ClassList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ClassList.aspx.designer.cs">
       <DependentUpon>ClassList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ClassUpdate.aspx.cs">
+      <DependentUpon>ClassUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ClassUpdate.aspx.designer.cs">
+      <DependentUpon>ClassUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentCreate.aspx.cs">
       <DependentUpon>StudentCreate.aspx</DependentUpon>

@@ -3,19 +3,33 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <form runat="server">
-        <div>
-            <asp:Label ID="LBL_Classes" for="DDLIST_ClassIDs" runat="server" Text="Classes"></asp:Label>
-            <asp:DropDownList ID="DDLIST_ClassIDs" runat="server" CssClass="form-control"></asp:DropDownList>
-        </div>
-        <br />
-        <div>
-            <asp:Label ID="LBL_StudentIDs" for="DDLIST_StudentIDs" runat="server" Text="Student ID"></asp:Label>
-            <asp:DropDownList ID="DDLIST_StudentIDs" runat="server" CssClass="form-control"></asp:DropDownList>
-        </div>
-        <br />
-        <div>
-            <asp:Button ID="BTN_Appeal" runat="server" Text="Appeal for Class" CssClass="btn btn-success" OnClick="BTN_Appeal_Click" />
-        </div>
-    </form>
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="ClassList.aspx">Classes</a> </li>
+        <li><a href="ClassAppeal.aspx">New Class Appeal</a> </li>
+    </ul>
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>Class ID</th>
+            <th>Class Name</th>
+            <th>Class Required Appeal</th>
+            <th>Class Quota</th>
+        </tr>
+        <tbody>
+            <asp:Repeater ID="Repeater1" runat="server">
+                <ItemTemplate>
+                    <accessdatasource></accessdatasource>
+                    <tr>
+                        <td><%#Eval("ClassID") %></td>
+                        <td><%#Eval("ClassName") %></td>
+                        <td><%#Eval("ClassRequiredAppeal") %></td>
+                        <td><%#Eval("ClassQuota") %></td>
+                        <td>
+                            <asp:HyperLink NavigateUrl='<%#$"~/ClassDelete.aspx?ClassID={Eval("ClassID")}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#$"~/ClassDelete.aspx?ClassID={Eval("ClassID")}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update</asp:HyperLink>
+                        </td>
+                    </tr>
+                </ItemTemplate>
+            </asp:Repeater>
+        </tbody>
+    </table>
 </asp:Content>

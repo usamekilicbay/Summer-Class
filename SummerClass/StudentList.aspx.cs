@@ -15,8 +15,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            List<EntityStudent> entityStudents = StudentBusinessLogic.GetStudentList();
-            Repeater1.DataSource = entityStudents;
+            Repeater1.DataSource = StudentBusinessLogic.GetStudentList();
             Repeater1.DataBind();
         }
     }

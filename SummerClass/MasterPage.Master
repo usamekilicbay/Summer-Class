@@ -12,18 +12,35 @@
 </head>
 <body>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse <%--navbar-fixed-top--%>">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Summer Class Registration</a>
+                <a class="navbar-brand" href="StudentList.aspx">Summer Class Registration</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="#">Home</a></li>
-                <li><a href="StudentList.aspx">Students</a></li>
-                <li><a href="StudentCreate.aspx">New Registration</a></li>
-                <li><a href="ClassList.aspx">Classes</a></li>
+                <li><a href="StudentList.aspx">Home</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="StudentList.aspx">Students</a></li>
+                        <li><a href="StudentCreate.aspx">New Student Registration</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Class
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ClassList.aspx">Classes</a></li>
+                        <li><a href="ClassAppeal.aspx">Class Appeal</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Quotas</a></li>
-                <li><a href="#">Help</a></li>
+                <li>
+                    <button href="#" class="btn btn-warning navbar-btn">Help</button>
+                </li>
             </ul>
         </div>
     </nav>

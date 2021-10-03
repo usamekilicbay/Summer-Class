@@ -42,7 +42,6 @@ namespace SummerClass
                 StudentBalance = Convert.ToDouble(TXTBOX_StudentBalance.Text)
             };
 
-            //Response.Write( StudentBusinessLogic.StudentUpdate(entityStudent));
             StudentBusinessLogic.StudentUpdate(entityStudent);
             Response.Redirect("StudentList.aspx");
         }

@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <form id="Form1" runat="server">
+    <form id="FORM_StudentUpdate" runat="server">
         <div class="form-group">
             <div>
                 <strong>

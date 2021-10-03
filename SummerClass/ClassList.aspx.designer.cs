@@ -15,48 +15,12 @@ namespace SummerClass
     {
 
         /// <summary>
-        /// LBL_Classes control.
+        /// Repeater1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_Classes;
-
-        /// <summary>
-        /// DDLIST_ClassIDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLIST_ClassIDs;
-
-        /// <summary>
-        /// LBL_StudentIDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_StudentIDs;
-
-        /// <summary>
-        /// DDLIST_StudentIDs control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLIST_StudentIDs;
-
-        /// <summary>
-        /// BTN_Appeal control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Appeal;
+        protected global::System.Web.UI.WebControls.Repeater Repeater1;
     }
 }

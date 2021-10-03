@@ -3,7 +3,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <table class="table table-bordered table-hover">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="StudentList.aspx">Students</a></li>
+        <li><a href="StudentCreate.aspx">New Student Registration</a></li>
+    </ul>
+    <table class="table table-bordered table-hover ">
         <tr>
             <th>Student ID</th>
             <th>Student Name</th>
@@ -25,8 +29,12 @@
                         <td><%#Eval("StudentPhoto")%></td>
                         <td><%#Eval("StudentBalance")%></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/StudentDelete.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete</asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%#$"~/StudentUpdate.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#$"~/StudentDelete.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#$"~/StudentUpdate.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
+                                <span class="glyphicon glyphicon-refresh"></span>
+                            </asp:HyperLink>
                         </td>
                     </tr>
                 </ItemTemplate>

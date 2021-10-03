@@ -15,13 +15,13 @@ namespace SummerClass
     {
 
         /// <summary>
-        /// Form1 control.
+        /// FORM_StudentUpdate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm FORM_StudentUpdate;
 
         /// <summary>
         /// LBL_StudentID control.
