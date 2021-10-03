@@ -71,6 +71,7 @@
     <Content Include="ClassDelete.aspx" />
     <Content Include="ClassList.aspx" />
     <Content Include="ClassUpdate.aspx" />
+    <Content Include="StudentLogin.aspx" />
     <Content Include="StudentCreate.aspx" />
     <Content Include="StudentDelete.aspx" />
     <Content Include="StudentList.aspx" />
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="ClassUpdate.aspx.designer.cs">
       <DependentUpon>ClassUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentLogin.aspx.designer.cs">
+      <DependentUpon>StudentLogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentCreate.aspx.cs">
       <DependentUpon>StudentCreate.aspx</DependentUpon>

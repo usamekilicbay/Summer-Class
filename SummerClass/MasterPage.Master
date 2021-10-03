@@ -42,6 +42,10 @@
                     <button href="#" class="btn btn-warning navbar-btn">Help</button>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
+                <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            </ul>
         </div>
     </nav>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>

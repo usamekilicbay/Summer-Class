@@ -7,7 +7,7 @@
         <li><a href="ClassList.aspx">Classes</a> </li>
         <li class="active"><a href="ClassAppeal.aspx">New Class Appeal</a> </li>
     </ul>
-    <form runat="server">
+    <form id="FORM_ClassAppeal" runat="server">
         <div>
             <asp:Label ID="LBL_Classes" for="DDLIST_ClassIDs" runat="server" Text="Classes"></asp:Label>
             <asp:DropDownList ID="DDLIST_ClassIDs" runat="server" CssClass="form-control"></asp:DropDownList>

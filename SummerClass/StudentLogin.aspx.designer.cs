@@ -11,61 +11,61 @@ namespace SummerClass
 {
 
 
-    public partial class ClassAppeal
+    public partial class Login
     {
 
         /// <summary>
-        /// FORM_ClassAppeal control.
+        /// FORM_StudentLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FORM_ClassAppeal;
+        protected global::System.Web.UI.HtmlControls.HtmlForm FORM_StudentLogin;
 
         /// <summary>
-        /// LBL_Classes control.
+        /// LBL_StudentNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_Classes;
+        protected global::System.Web.UI.WebControls.Label LBL_StudentNumber;
 
         /// <summary>
-        /// DDLIST_ClassIDs control.
+        /// TXTBOX_StudentNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLIST_ClassIDs;
+        protected global::System.Web.UI.WebControls.TextBox TXTBOX_StudentNumber;
 
         /// <summary>
-        /// LBL_StudentIDs control.
+        /// LBL_StudentPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_StudentIDs;
+        protected global::System.Web.UI.WebControls.Label LBL_StudentPassword;
 
         /// <summary>
-        /// DDLIST_StudentIDs control.
+        /// TXTBOX_StudentPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDLIST_StudentIDs;
+        protected global::System.Web.UI.WebControls.TextBox TXTBOX_StudentPassword;
 
         /// <summary>
-        /// BTN_Appeal control.
+        /// BTN_Login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_Appeal;
+        protected global::System.Web.UI.WebControls.Button BTN_Login;
     }
 }

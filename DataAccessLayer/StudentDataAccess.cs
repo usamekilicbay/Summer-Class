@@ -12,9 +12,35 @@ namespace DataAccessLayer
 {
     public class StudentDataAccess
     {
+        public static bool StudentLogin(EntityStudent entityStudent)
+        {
+            string studentNumberQuery = $"StudentNumber = '{entityStudent.StudentNumber}'";
+            SqlCommand sqlCommand = new SqlCommand($"Select StudentNumber, StudentPassword From TBL_Students Where {studentNumberQuery}", Connection.sqlConnection);
+            ConnectionHelper.OpenConnectionIfNot(sqlCommand);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            if (!sqlDataReader.Read())
+            {
+                sqlDataReader.Close();
+                return false;
+            }
+
+            string studentNumber = sqlDataReader["StudentNumber"].ToString();
+            string studentPasswprd = sqlDataReader["StudentPassword"].ToString();
+
+            if (!String.IsNullOrEmpty(studentNumber) && String.Equals(entityStudent.StudentPassword, studentPasswprd))
+            {
+                sqlDataReader.Close();
+                return true;
+            }
+
+            sqlDataReader.Close();
+            return false;
+        }
+
         public static int AddStudent(EntityStudent entityStudent)
         {
-            SqlCommand sqlCommand = new SqlCommand($"insert into TBL_Students (StudentName,StudentNumber,StudentPassword,StudentPhoto) values ('{entityStudent.StudentName}', '{entityStudent.StudentNumber}', '{entityStudent.StudentPassword}', '{entityStudent.StudentPhoto}')", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"Insert Into TBL_Students (StudentName,StudentNumber,StudentPassword,StudentPhoto) values ('{entityStudent.StudentName}', '{entityStudent.StudentNumber}', '{entityStudent.StudentPassword}', '{entityStudent.StudentPhoto}')", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery();
@@ -50,7 +76,7 @@ namespace DataAccessLayer
             SqlCommand sqlCommand = new SqlCommand("Select * From TBL_Students", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
-           
+
             while (sqlDataReader.Read())
             {
                 EntityStudent entityStudent = new EntityStudent
