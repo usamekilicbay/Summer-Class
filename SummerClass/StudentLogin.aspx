@@ -11,7 +11,7 @@
         <br />
         <div>
             <asp:Label ID="LBL_StudentPassword" for="TXTBOX_StudentPassword" runat="server" Text="Student Password"></asp:Label>
-            <asp:TextBox ID="TXTBOX_StudentPassword" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="TXTBOX_StudentPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
         </div>
         <br />
         <div>

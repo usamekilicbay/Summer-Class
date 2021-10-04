@@ -42,13 +42,17 @@
                     <button href="#" class="btn btn-warning navbar-btn">Help</button>
                 </li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul id="UL_LoginAndSignUp" runat="server" class="nav navbar-nav navbar-right">
                 <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>
                 <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+            </ul>
+            <ul id="UL_LogOut" runat="server" class="nav navbar-nav navbar-right">
+                <li><a href="StudentLogOut.aspx"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
             </ul>
         </div>
     </nav>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+    <div id="ALERT_Session" runat="server" class="alert-info"><strong id="STRALERT_Session" runat="server">Logged Out </strong>Successfully </div>
 </body>
 </html>
 
