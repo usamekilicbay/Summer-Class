@@ -34,9 +34,9 @@ namespace BusinessLogicLayer
             return StudentDataAccess.GetStudentList();
         }
 
-        public static bool StudentDelete(int studentID)
+        public static bool ChangeStudentStatus(int studentID, StudentStatus studentStatus)
         {
-            return StudentDataAccess.DeleteStudent(studentID);
+            return StudentDataAccess.ChangeStudentStatus(studentID, studentStatus);
         }
 
         public static bool StudentUpdate(EntityStudent entityStudent)

@@ -8,6 +8,12 @@ using System.Data.SqlClient;
 using EntityLayer;
 using Helper;
 
+public enum StudentStatus
+{
+    PASSIVE,
+    ACTIVE
+}
+
 namespace DataAccessLayer
 {
     public class StudentDataAccess
@@ -97,9 +103,12 @@ namespace DataAccessLayer
             return entityStudents;
         }
 
-        public static bool DeleteStudent(int studentID)
+        public static bool ChangeStudentStatus(int studentID, StudentStatus studentStatus)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete From TBL_Students WHERE StudentID={studentID}", Connection.sqlConnection);
+            string studentIDQuery = $"StudentID='{studentID}'";
+            string studentStatusQuery = $"StudentActivityStatus = '{studentStatus}'";
+
+            SqlCommand sqlCommand = new SqlCommand($"Update TBL_Students Set {studentStatusQuery} WHERE {studentIDQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery() > 0;

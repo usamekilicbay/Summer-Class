@@ -17,7 +17,7 @@ namespace SummerClass
             int studentID = Convert.ToInt32(Request.QueryString["StudentID"]);
             //Response.Write(studentID);
 
-            StudentBusinessLogic.StudentDelete(studentID);
+            StudentBusinessLogic.ChangeStudentStatus(studentID, StudentStatus.PASSIVE);
             Response.Redirect("StudentList.aspx");
         }
     }
