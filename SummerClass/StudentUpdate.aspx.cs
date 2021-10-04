@@ -8,6 +8,7 @@ using BusinessLogicLayer;
 using DataAccessLayer;
 using EntityLayer;
 using System.Data.SqlClient;
+using static Helper.Types;
 
 namespace SummerClass
 {
@@ -28,6 +29,16 @@ namespace SummerClass
             TXTBOX_StudentPassword.Text = entityStudent.StudentPassword;
             TXTBOX_StudentPhoto.Text = entityStudent.StudentPhoto;
             TXTBOX_StudentBalance.Text = entityStudent.StudentBalance.ToString();
+
+            Array statuses = Enum.GetNames(typeof(StudentStatus));
+
+            for (int i = 0; i < statuses.Length; i++)
+            {
+                DDL_StudentStatus.Items.Add(((StudentStatus)i).ToString());
+                DDL_StudentStatus.Items[i].Value = i.ToString();
+            }
+
+            DDL_StudentStatus.SelectedIndex = (int)entityStudent.StudentStatus;
         }
 
         protected void BTN_UpdateStudent_Click(object sender, EventArgs e)
@@ -39,7 +50,8 @@ namespace SummerClass
                 StudentNumber = TXTBOX_StudentNumber.Text,
                 StudentPassword = TXTBOX_StudentPassword.Text,
                 StudentPhoto = TXTBOX_StudentPhoto.Text,
-                StudentBalance = Convert.ToDouble(TXTBOX_StudentBalance.Text)
+                StudentBalance = Convert.ToDouble(TXTBOX_StudentBalance.Text),
+                StudentStatus = (StudentStatus)Enum.Parse(typeof(StudentStatus), DDL_StudentStatus.SelectedItem.Value)
             };
 
             StudentBusinessLogic.StudentUpdate(entityStudent);

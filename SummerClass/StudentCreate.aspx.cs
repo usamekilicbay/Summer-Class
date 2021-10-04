@@ -27,7 +27,7 @@ namespace SummerClass
                 StudentPhoto = TXTBOX_StudentPhoto.Text,
             };
 
-            StudentBusinessLogic.StudentAdd(entityStudent);
+            StudentBusinessLogic.CreateStudent(entityStudent);
             Response.Redirect("StudentList.aspx");
         }
     }

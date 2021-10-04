@@ -10,7 +10,9 @@ using Helper;
 
 namespace DataAccessLayer
 {
-    public class ClassDataAccess
+    #region CRUD
+
+    public partial class ClassDataAccess
     {
         public static List<EntityClass> GetClassList()
         {
@@ -44,5 +46,12 @@ namespace DataAccessLayer
 
             return sqlCommand.ExecuteNonQuery();
         }
+    }
+
+    #endregion
+
+    public partial class ClassDataAccess
+    {
+
     }
 }

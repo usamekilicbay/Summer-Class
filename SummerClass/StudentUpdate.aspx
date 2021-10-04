@@ -46,6 +46,12 @@
                 </strong>
                 <asp:TextBox ID="TXTBOX_StudentBalance" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <div>
+                <strong>
+                    <asp:Label ID="LBL_StudentStatus" for="DDL_StudentStatus" runat="server" Text="Student Status:"></asp:Label>
+                </strong>
+                <asp:DropDownList ID="DDL_StudentStatus" runat="server" CssClass="form-control"></asp:DropDownList>
+            </div>
         </div>
         <asp:Button ID="BTN_UpdateStudent" runat="server" CssClass="btn btn-info" Text="Update Student" OnClick="BTN_UpdateStudent_Click" />
     </form>

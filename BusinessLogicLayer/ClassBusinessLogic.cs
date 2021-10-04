@@ -8,6 +8,8 @@ using EntityLayer;
 
 namespace BusinessLogicLayer
 {
+    #region CRUD
+
     public class ClassBusinessLogic
     {
         public static List<EntityClass> GetClassList()
@@ -20,4 +22,6 @@ namespace BusinessLogicLayer
             return ClassDataAccess.CreateAppeal(entityAppeal);
         }
     }
+
+    #endregion
 }

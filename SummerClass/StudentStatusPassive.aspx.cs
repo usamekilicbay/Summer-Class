@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using BusinessLogicLayer;
 using DataAccessLayer;
 using EntityLayer;
+using static Helper.Types;
 
 namespace SummerClass
 {
@@ -15,7 +16,6 @@ namespace SummerClass
         protected void Page_Load(object sender, EventArgs e)
         {
             int studentID = Convert.ToInt32(Request.QueryString["StudentID"]);
-            //Response.Write(studentID);
 
             StudentBusinessLogic.ChangeStudentStatus(studentID, StudentStatus.PASSIVE);
             Response.Redirect("StudentList.aspx");

@@ -15,6 +15,7 @@
             <th>Student Password</th>
             <th>Student Photo</th>
             <th>Student Balance</th>
+            <th>Student Status</th>
             <th>Operations</th>
         </tr>
         <tbody>
@@ -28,9 +29,10 @@
                         <td><%#Eval("StudentPassword")%></td>
                         <td><%#Eval("StudentPhoto")%></td>
                         <td><%#Eval("StudentBalance")%></td>
+                        <td><%#Eval("StudentStatus")%></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/StudentDelete.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete
-                                <span class="glyphicon glyphicon-trash"></span>
+                            <asp:HyperLink NavigateUrl='<%#$"~/StudentStatusPassive.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
+                                <span class="glyphicon glyphicon-ban-circle"></span>
                             </asp:HyperLink>
                             <asp:HyperLink NavigateUrl='<%#$"~/StudentUpdate.aspx?StudentID={Eval("StudentID")}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
                                 <span class="glyphicon glyphicon-refresh"></span>

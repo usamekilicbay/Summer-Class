@@ -132,6 +132,24 @@ namespace SummerClass
         protected global::System.Web.UI.WebControls.TextBox TXTBOX_StudentBalance;
 
         /// <summary>
+        /// LBL_StudentStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBL_StudentStatus;
+
+        /// <summary>
+        /// DDL_StudentStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DDL_StudentStatus;
+
+        /// <summary>
         /// BTN_UpdateStudent control.
         /// </summary>
         /// <remarks>

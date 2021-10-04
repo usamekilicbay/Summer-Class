@@ -24,9 +24,7 @@ namespace SummerClass
                 StudentPassword = TXTBOX_StudentPassword.Text
             };
 
-            bool isCorrectCredentials = StudentBusinessLogic.StudentLogin(entityStudent);
-
-            if (!isCorrectCredentials)
+            if (!StudentBusinessLogic.StudentLogin(entityStudent))
             {
                 Response.Write("Your Credentials are expired or wrong, please check them again");
                 return;

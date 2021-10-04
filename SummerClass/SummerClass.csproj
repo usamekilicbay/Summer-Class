@@ -74,7 +74,7 @@
     <Content Include="ClassUpdate.aspx" />
     <Content Include="StudentLogin.aspx" />
     <Content Include="StudentCreate.aspx" />
-    <Content Include="StudentSetPassive.aspx" />
+    <Content Include="StudentStatusPassive.aspx" />
     <Content Include="StudentList.aspx" />
     <Content Include="StudentLogOut.aspx" />
     <Content Include="StudentUpdate.aspx" />
@@ -131,12 +131,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentSetPassive.aspx.cs">
-      <DependentUpon>StudentSetPassive.aspx</DependentUpon>
+    <Compile Include="StudentStatusPassive.aspx.cs">
+      <DependentUpon>StudentStatusPassive.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentSetPassive.aspx.designer.cs">
-      <DependentUpon>StudentSetPassive.aspx</DependentUpon>
+    <Compile Include="StudentStatusPassive.aspx.designer.cs">
+      <DependentUpon>StudentStatusPassive.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentList.aspx.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
@@ -182,6 +182,10 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{98732747-0f7f-4847-b4ea-686121813c18}</Project>
       <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{6e811266-5436-48a4-a27c-308718905d5d}</Project>
+      <Name>Helper</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

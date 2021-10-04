@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Helper.Types;
 
 namespace EntityLayer
 {
@@ -25,5 +26,8 @@ namespace EntityLayer
 
         private double _studentBalance;
         public double StudentBalance { get => _studentBalance; set => _studentBalance = value; }
+
+        private StudentStatus _studentStatus;
+        public StudentStatus StudentStatus { get => _studentStatus; set => _studentStatus = value; }
     }
 }

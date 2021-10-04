@@ -52,7 +52,7 @@
         </div>
     </nav>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
-    <div id="ALERT_Session" runat="server" class="alert-info"><strong id="STRALERT_Session" runat="server">Logged Out </strong>Successfully </div>
+    <%--<div id="ALERT_Session" runat="server" class="alert-info"><strong id="STRALERT_Session" runat="server">Logged Out </strong>Successfully </div>--%>
 </body>
 </html>
 
