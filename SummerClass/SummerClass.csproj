@@ -72,11 +72,11 @@
     <Content Include="ClassDelete.aspx" />
     <Content Include="ClassList.aspx" />
     <Content Include="ClassUpdate.aspx" />
-    <Content Include="StudentLogin.aspx" />
+    <Content Include="StudentSignIn.aspx" />
     <Content Include="StudentCreate.aspx" />
-    <Content Include="StudentStatusPassive.aspx" />
+    <Content Include="StudentStatusPacify.aspx" />
     <Content Include="StudentList.aspx" />
-    <Content Include="StudentLogOut.aspx" />
+    <Content Include="StudentSignOut.aspx" />
     <Content Include="StudentUpdate.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -109,12 +109,12 @@
     <Compile Include="ClassUpdate.aspx.designer.cs">
       <DependentUpon>ClassUpdate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentLogin.aspx.cs">
-      <DependentUpon>StudentLogin.aspx</DependentUpon>
+    <Compile Include="StudentSignIn.aspx.cs">
+      <DependentUpon>StudentSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentLogin.aspx.designer.cs">
-      <DependentUpon>StudentLogin.aspx</DependentUpon>
+    <Compile Include="StudentSignIn.aspx.designer.cs">
+      <DependentUpon>StudentSignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentCreate.aspx.cs">
       <DependentUpon>StudentCreate.aspx</DependentUpon>
@@ -131,12 +131,12 @@
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StudentStatusPassive.aspx.cs">
-      <DependentUpon>StudentStatusPassive.aspx</DependentUpon>
+    <Compile Include="StudentStatusPacify.aspx.cs">
+      <DependentUpon>StudentStatusPacify.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentStatusPassive.aspx.designer.cs">
-      <DependentUpon>StudentStatusPassive.aspx</DependentUpon>
+    <Compile Include="StudentStatusPacify.aspx.designer.cs">
+      <DependentUpon>StudentStatusPacify.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentList.aspx.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
@@ -145,12 +145,12 @@
     <Compile Include="StudentList.aspx.designer.cs">
       <DependentUpon>StudentList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="StudentLogOut.aspx.cs">
-      <DependentUpon>StudentLogOut.aspx</DependentUpon>
+    <Compile Include="StudentSignOut.aspx.cs">
+      <DependentUpon>StudentSignOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="StudentLogOut.aspx.designer.cs">
-      <DependentUpon>StudentLogOut.aspx</DependentUpon>
+    <Compile Include="StudentSignOut.aspx.designer.cs">
+      <DependentUpon>StudentSignOut.aspx</DependentUpon>
     </Compile>
     <Compile Include="StudentUpdate.aspx.cs">
       <DependentUpon>StudentUpdate.aspx</DependentUpon>

@@ -1,5 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SummerClass.MasterPage" %>
 
+<%@ Import Namespace="Helper" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
