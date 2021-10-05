@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Helper
 {
-    public static class Constant
+    namespace Constant
     {
         public static class SQLQuery
         {

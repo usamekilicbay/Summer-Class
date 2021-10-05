@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="StudentList.aspx.cs" Inherits="SummerClass.StudentList" %>
 
-<%@ Import Namespace="Helper" %>
+<%@ Import Namespace="Helper.Constant" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -25,18 +25,18 @@
                 <ItemTemplate>
                     <accessdatasource></accessdatasource>
                     <tr>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_ID)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_NAME)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_NUMBER)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_PASSWORD)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_PHOTO)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_BALANCE)%></td>
-                        <td><%#Eval(Constant.StudentPath.STUDEND_STATUS)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_ID)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_NAME)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_NUMBER)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_PASSWORD)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_PHOTO)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_BALANCE)%></td>
+                        <td><%#Eval(StudentPath.STUDEND_STATUS)%></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{Constant.PageName.STUDENT_STATUS_PACIFY}?{Constant.StudentPath.STUDEND_ID}={Eval(Constant.StudentPath.STUDEND_ID)}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_STATUS_PACIFY}?{StudentPath.STUDEND_ID}={Eval(StudentPath.STUDEND_ID)}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
                                 <span class="glyphicon glyphicon-ban-circle"></span>
                             </asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{Constant.PageName.STUDENT_UPDATE}?{Constant.StudentPath.STUDEND_ID}={Eval(Constant.StudentPath.STUDEND_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_UPDATE}?{StudentPath.STUDEND_ID}={Eval(StudentPath.STUDEND_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </asp:HyperLink>
                         </td>
