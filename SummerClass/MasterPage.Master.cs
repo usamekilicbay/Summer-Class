@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
-using System.Threading;
+using static Helper.Types;
 
 namespace SummerClass
 {
@@ -14,9 +7,9 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            bool isSessionExist = !String.IsNullOrEmpty((string)Session["StudentNumber"]);
-            UL_LoginAndSignUp.Visible = !isSessionExist;
-            UL_LogOut.Visible = isSessionExist;
+            SessionRole currentSessionRole = SessionControl.GetCurrentSessionRole();
+            UL_SignInAndSignUp.Visible = currentSessionRole == SessionRole.NON;
+            UL_SignOut.Visible = currentSessionRole != SessionRole.NON;
 
             //ALERT_Session.Visible = false;
 

@@ -7,5 +7,12 @@
             PASSIVE,
             ACTIVE
         }
+
+        public enum SessionRole
+        {
+            NON,
+            STUDENT,
+            TEACHER
+        }
     }
 }

@@ -24,22 +24,22 @@ namespace SummerClass
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
 
         /// <summary>
-        /// UL_LoginAndSignUp control.
+        /// UL_SignInAndSignUp control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_LoginAndSignUp;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_SignInAndSignUp;
 
         /// <summary>
-        /// UL_LogOut control.
+        /// UL_SignOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_LogOut;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_SignOut;
 
         /// <summary>
         /// ContentPlaceHolder2 control.

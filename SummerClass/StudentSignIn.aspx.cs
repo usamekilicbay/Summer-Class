@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BusinessLogicLayer;
 using EntityLayer;
+using Helper.Constant;
+using static Helper.Types;
 
 namespace SummerClass
 {
@@ -30,8 +32,8 @@ namespace SummerClass
                 return;
             }
 
-            Session.Add("StudentNumber", TXTBOX_StudentNumber.Text);
-            Response.Redirect("ClassList.aspx");
+            Session.Add(SessionRole.STUDENT.ToString(), TXTBOX_StudentNumber.Text);
+            Response.Redirect(PageName.CLASS_LIST);
         }
     }
 }

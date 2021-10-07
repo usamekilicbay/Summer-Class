@@ -114,6 +114,12 @@
             public const string STUDENT_UPDATE = "StudentUpdate" + FileExtension.ASPX;
         }
 
+        public static class SessionKey
+        {
+            public const string STUDENT = "Student";
+            public const string TEACHER = "Teacher";
+        }
+
         public static class FileExtension
         {
             public const string ASPX = ".aspx";
