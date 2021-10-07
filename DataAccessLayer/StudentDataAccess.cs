@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using System.Data.SqlClient;
 using EntityLayer;
 using Helper;
+using Helper.Constant;
+using static Helper.Constant.SQLQuery;
+using static Helper.Constant.StudentColumn;
 using static Helper.Types;
 
 namespace DataAccessLayer
@@ -17,7 +16,7 @@ namespace DataAccessLayer
     {
         public static int CreateStudent(EntityStudent entityStudent)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Insert Into TBL_Students (StudentName,StudentNumber,StudentPassword,StudentPhoto) values ('{entityStudent.StudentName}', '{entityStudent.StudentNumber}', '{entityStudent.StudentPassword}', '{entityStudent.StudentPhoto}')", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{INSERT_INTO_STUDENTS} ({STUDENT_NAME}, {STUDENT_NUMBER}, {STUDENT_PASSWORD}, {STUDENT_PHOTO}) {VALUES} ('{entityStudent.StudentName}', '{entityStudent.StudentNumber}', '{entityStudent.StudentPassword}', '{entityStudent.StudentPhoto}')", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery();
@@ -25,7 +24,7 @@ namespace DataAccessLayer
 
         public static EntityStudent GetStudent(int studentID)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Select * From TBL_Students where StudentID={studentID}", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT_ALL_FROM_STUDENTS + WHERE} {STUDENT_ID}={studentID}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -34,13 +33,13 @@ namespace DataAccessLayer
 
             EntityStudent entityStudent = new EntityStudent
             {
-                StudentID = Convert.ToInt32(sqlDataReader["StudentID"]),
-                StudentName = sqlDataReader["StudentName"].ToString(),
-                StudentNumber = (string)sqlDataReader["StudentNumber"],
-                StudentPassword = sqlDataReader["StudentPassword"].ToString(),
-                StudentPhoto = sqlDataReader["StudentPhoto"].ToString(),
-                StudentBalance = Convert.ToDouble(sqlDataReader["StudentBalance"]),
-                StudentStatus = (StudentStatus)Convert.ToInt32(Convert.ToBoolean(sqlDataReader["StudentStatus"]))
+                StudentID = Convert.ToInt32(sqlDataReader[STUDENT_ID]),
+                StudentName = sqlDataReader[STUDENT_NAME].ToString(),
+                StudentNumber = (string)sqlDataReader[STUDENT_NUMBER],
+                StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
+                StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
+                StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE]),
+                StudentStatus = (StudentStatus)Convert.ToInt32(Convert.ToBoolean(sqlDataReader[STUDENT_STATUS]))
             };
 
             sqlDataReader.Close();
@@ -50,15 +49,15 @@ namespace DataAccessLayer
 
         public static bool UpdateStudent(EntityStudent entityStudent)
         {
-            string studentIDQuery = $"StudentID = '{entityStudent.StudentID}'";
-            string studentNameQuery = $"StudentName = '{entityStudent.StudentName}'";
-            string studentNumberQuery = $"StudentNumber = '{entityStudent.StudentNumber}'";
-            string studentPasswordQuery = $"StudentPassword = '{entityStudent.StudentPassword}'";
-            string studentPhotoQuery = $"StudentPhoto = '{entityStudent.StudentPhoto}'";
-            string studentBalanceQuery = $"StudentBalance = '{entityStudent.StudentBalance}'";
-            string studentStatusQuery = $"StudentStatus = '{Convert.ToBoolean(entityStudent.StudentStatus)}'";
+            string studentIDQuery = $"{STUDENT_ID} = '{entityStudent.StudentID}'";
+            string studentNameQuery = $"{STUDENT_NAME} = '{entityStudent.StudentName}'";
+            string studentNumberQuery = $"{STUDENT_NUMBER} = '{entityStudent.StudentNumber}'";
+            string studentPasswordQuery = $"{STUDENT_PASSWORD} = '{entityStudent.StudentPassword}'";
+            string studentPhotoQuery = $"{STUDENT_PHOTO} = '{entityStudent.StudentPhoto}'";
+            string studentBalanceQuery = $"{STUDENT_BALANCE} = '{entityStudent.StudentBalance}'";
+            string studentStatusQuery = $"{STUDENT_STATUS} = '{Convert.ToBoolean(entityStudent.StudentStatus)}'";
 
-            SqlCommand sqlCommand = new SqlCommand($"Update TBL_Students Set {studentNameQuery}, {studentNumberQuery}, {studentPasswordQuery}, {studentPhotoQuery}, {studentBalanceQuery}, {studentStatusQuery} Where {studentIDQuery}", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{UPDATE_STUDENTS_SET} {studentNameQuery}, {studentNumberQuery}, {studentPasswordQuery}, {studentPhotoQuery}, {studentBalanceQuery}, {studentStatusQuery} {WHERE} {studentIDQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery() > 0;
@@ -66,10 +65,10 @@ namespace DataAccessLayer
 
         public static bool ChangeStudentStatus(int studentID, StudentStatus studentStatus)
         {
-            string studentIDQuery = $"StudentID='{studentID}'";
-            string studentStatusQuery = $"StudentStatus = '{Convert.ToBoolean(studentStatus)}'";
+            string studentIDQuery = $"{STUDENT_STATUS} = '{studentID}'";
+            string studentStatusQuery = $"{STUDENT_STATUS} = '{Convert.ToBoolean(studentStatus)}'";
 
-            SqlCommand sqlCommand = new SqlCommand($"Update TBL_Students Set {studentStatusQuery} WHERE {studentIDQuery}", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{UPDATE_STUDENTS_SET} {studentStatusQuery} {WHERE} {studentIDQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery() > 0;
@@ -78,7 +77,7 @@ namespace DataAccessLayer
         public static List<EntityStudent> GetStudentList()
         {
             List<EntityStudent> entityStudents = new List<EntityStudent>();
-            SqlCommand sqlCommand = new SqlCommand("Select * From TBL_Students", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(SELECT_ALL_FROM_STUDENTS, Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -86,13 +85,13 @@ namespace DataAccessLayer
             {
                 EntityStudent entityStudent = new EntityStudent
                 {
-                    StudentID = Convert.ToInt32(sqlDataReader["StudentID"].ToString()),
-                    StudentName = sqlDataReader["StudentName"].ToString(),
-                    StudentNumber = sqlDataReader["StudentNumber"].ToString(),
-                    StudentPassword = sqlDataReader["StudentPassword"].ToString(),
-                    StudentPhoto = sqlDataReader["StudentPhoto"].ToString(),
-                    StudentBalance = Convert.ToDouble(sqlDataReader["StudentBalance"].ToString()),
-                    StudentStatus = (StudentStatus)Convert.ToInt32(sqlDataReader["StudentStatus"])
+                    StudentID = Convert.ToInt32(sqlDataReader[STUDENT_ID].ToString()),
+                    StudentName = sqlDataReader[STUDENT_NAME].ToString(),
+                    StudentNumber = sqlDataReader[STUDENT_NUMBER].ToString(),
+                    StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
+                    StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
+                    StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE].ToString()),
+                    StudentStatus = (StudentStatus)Convert.ToInt32(sqlDataReader[STUDENT_STATUS])
                 };
 
                 entityStudents.Add(entityStudent);
@@ -112,8 +111,8 @@ namespace DataAccessLayer
     {
         public static bool StudentLogin(EntityStudent entityStudent)
         {
-            string studentNumberQuery = $"StudentNumber = '{entityStudent.StudentNumber}'";
-            SqlCommand sqlCommand = new SqlCommand($"Select StudentNumber, StudentPassword From TBL_Students Where {studentNumberQuery}", Connection.sqlConnection);
+            string studentNumberQuery = $"{STUDENT_NUMBER} = '{entityStudent.StudentNumber}'";
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {STUDENT_NUMBER}, {STUDENT_PASSWORD} {FROM_STUDENTS_WHERE} {studentNumberQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -123,8 +122,8 @@ namespace DataAccessLayer
                 return false;
             }
 
-            string studentNumber = sqlDataReader["StudentNumber"].ToString();
-            string studentPasswprd = sqlDataReader["StudentPassword"].ToString();
+            string studentNumber = sqlDataReader[STUDENT_NUMBER].ToString();
+            string studentPasswprd = sqlDataReader[STUDENT_PASSWORD].ToString();
 
             if (!String.IsNullOrEmpty(studentNumber) && String.Equals(entityStudent.StudentPassword, studentPasswprd))
             {

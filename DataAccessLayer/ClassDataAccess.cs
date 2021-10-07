@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
 using System.Data.SqlClient;
 using EntityLayer;
 using Helper;
+using Helper.Constant;
+using static Helper.Constant.SQLQuery;
+using static Helper.Constant.Table;
 
 namespace DataAccessLayer
 {
@@ -17,7 +16,7 @@ namespace DataAccessLayer
         public static List<EntityClass> GetClassList()
         {
             List<EntityClass> entityClasses = new List<EntityClass>();
-            SqlCommand sqlCommand = new SqlCommand($"Select * From TBL_Classes", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand(SELECT_ALL_FROM_CLASSES, Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
@@ -25,10 +24,10 @@ namespace DataAccessLayer
             {
                 EntityClass entityClass = new EntityClass
                 {
-                    ClassID = Convert.ToInt32(sqlDataReader["ClassID"].ToString()),
-                    ClassName = sqlDataReader["ClassName"].ToString(),
-                    ClassRequiredAppeal = Convert.ToInt32(sqlDataReader["ClassRequiredAppeal"]),
-                    ClassQuota = Convert.ToInt32(sqlDataReader["ClassQuota"])
+                    ClassID = Convert.ToInt32(sqlDataReader[ClassColumn.CLASS_ID].ToString()),
+                    ClassName = sqlDataReader[ClassColumn.CLASS_NAME].ToString(),
+                    ClassRequiredAppeal = Convert.ToInt32(sqlDataReader[ClassColumn.CLASS_REQUIRED_APPEAL]),
+                    ClassQuota = Convert.ToInt32(sqlDataReader[ClassColumn.CLASS_QUOTA])
                 };
 
                 entityClasses.Add(entityClass);
@@ -41,7 +40,7 @@ namespace DataAccessLayer
 
         public static int CreateAppeal(EntityAppeal entityAppeal)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Insert Into TBL_Appeals (StudentID, ClassID) values ('{entityAppeal.StudentID}', '{entityAppeal.ClassID}')", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{INSERT_INTO_APPEALS} ({AppealColumn.CLASS_ID}, {AppealColumn.STUDENT_ID}) {VALUES} ('{entityAppeal.ClassID}', '{entityAppeal.StudentID}')", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
 
             return sqlCommand.ExecuteNonQuery();
