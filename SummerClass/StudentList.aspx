@@ -25,18 +25,18 @@
                 <ItemTemplate>
                     <accessdatasource></accessdatasource>
                     <tr>
-                        <td><%#Eval(StudentPath.STUDEND_ID)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_NAME)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_NUMBER)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_PASSWORD)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_PHOTO)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_BALANCE)%></td>
-                        <td><%#Eval(StudentPath.STUDEND_STATUS)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_ID)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_NAME)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_NUMBER)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_PASSWORD)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_PHOTO)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_BALANCE)%></td>
+                        <td><%#Eval(StudentColumn.STUDENT_STATUS)%></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_STATUS_PACIFY}?{StudentPath.STUDEND_ID}={Eval(StudentPath.STUDEND_ID)}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_STATUS_PACIFY}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
                                 <span class="glyphicon glyphicon-ban-circle"></span>
                             </asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_UPDATE}?{StudentPath.STUDEND_ID}={Eval(StudentPath.STUDEND_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.STUDENT_UPDATE}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </asp:HyperLink>
                         </td>
