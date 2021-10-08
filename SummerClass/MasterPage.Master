@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SummerClass.MasterPage" %>
 
-<%@ Import Namespace="Helper" %>
+<%@ Import Namespace="Helper.Constant" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,16 +21,7 @@
             </div>
             <ul class="nav navbar-nav">
                 <li><a href="StudentList.aspx">Home</a></li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="StudentList.aspx">Students</a></li>
-                        <li><a href="StudentCreate.aspx">New Student Registration</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
+                <li id="DD_Class" runat="server" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">Class
                         <span class="caret"></span>
                     </a>
@@ -39,18 +30,27 @@
                         <li><a href="ClassAppeal.aspx">Class Appeal</a></li>
                     </ul>
                 </li>
+                <li id="DD_Student" runat="server" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="StudentList.aspx">Students</a></li>
+                        <li><a href="StudentCreate.aspx">New Student Registration</a></li>
+                    </ul>
+                </li>
                 <li><a href="#">Quotas</a></li>
                 <li>
                     <button href="#" class="btn btn-warning navbar-btn">Help</button>
                 </li>
             </ul>
             <ul id="UL_SignInAndSignUp" runat="server" class="nav navbar-nav navbar-right">
-                <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-user"></span> Sign Up </a></li>
-                <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-log-in"></span> Student Sign In </a></li>
-                <li><a href="StudentLogin.aspx"><span class="glyphicon glyphicon-education"></span> Teacher Sign In </a></li>
+                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>Sign Up </a></li>
+                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-log-in"></span>Student Sign In </a></li>
+                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-education"></span>Teacher Sign In </a></li>
             </ul>
             <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
-                <li><a href="StudentLogOut.aspx"><span class="glyphicon glyphicon-log-out"></span>Log Out</a></li>
+                <li><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>Sign Out</a></li>
             </ul>
         </div>
     </nav>

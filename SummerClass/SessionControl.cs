@@ -9,7 +9,7 @@ namespace SummerClass
         {
             if (Current.Session[SessionRole.TEACHER.ToString()] != null)
                 return SessionRole.TEACHER;
-            else if (Current.[SessionRole.TEACHER.ToString()] != null)
+            else if (Current.Session[SessionRole.TEACHER.ToString()] != null)
                 return SessionRole.STUDENT;
             else
                 return SessionRole.NON;

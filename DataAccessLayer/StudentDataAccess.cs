@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using EntityLayer;
 using Helper;
-using Helper.Constant;
 using static Helper.Constant.SQLQuery;
 using static Helper.Constant.StudentColumn;
 using static Helper.Types;

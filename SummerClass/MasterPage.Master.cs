@@ -10,6 +10,8 @@ namespace SummerClass
             SessionRole currentSessionRole = SessionControl.GetCurrentSessionRole();
             UL_SignInAndSignUp.Visible = currentSessionRole == SessionRole.NON;
             UL_SignOut.Visible = currentSessionRole != SessionRole.NON;
+            DD_Class.Visible = currentSessionRole != SessionRole.NON;
+            DD_Student.Visible = currentSessionRole != SessionRole.NON;
 
             //ALERT_Session.Visible = false;
 
