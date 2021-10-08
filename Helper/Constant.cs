@@ -53,6 +53,58 @@
             #endregion
         }
 
+        #region KEY
+
+        public static class StudentKey
+        {
+            public const string STUDENT = "Student";
+            public const string STUDENT_SPACE = "Student ";
+
+            public const string ID = "ID";
+            public const string NAME = "Name";
+            public const string NUMBER = "Number";
+            public const string PASSWORD = "Password";
+            public const string PHOTO = "Photo";
+            public const string BALANCE = "Balance";
+            public const string STATUS = "Status";
+        }
+
+        public static class ClassKey
+        {
+            public const string CLASS = "Class";
+            public const string CLASS_SPACE = "Class ";
+
+            public const string ID = "ID";
+            public const string NAME = "Name";
+            public const string REQUIRED_APPEAL = "RequiredAppeal";
+            public const string QUOTA = "ID";
+        }
+
+        #endregion
+
+                #region LABEL
+
+        public static class StudentLabel
+        {
+            public const string STUDENT_ID = StudentKey.STUDENT_SPACE + StudentKey.ID;
+            public const string STUDENT_NAME = StudentKey.STUDENT_SPACE + StudentKey.NAME;
+            public const string STUDENT_NUMBER = StudentKey.STUDENT_SPACE + StudentKey.NUMBER;
+            public const string STUDENT_PASSWORD = StudentKey.STUDENT_SPACE + StudentKey.PASSWORD;
+            public const string STUDENT_PHOTO = StudentKey.STUDENT_SPACE + StudentKey.PHOTO;
+            public const string STUDENT_BALANCE = StudentKey.STUDENT_SPACE + StudentKey.BALANCE;
+            public const string STUDENT_STATUS = StudentKey.STUDENT_SPACE + StudentKey.STATUS;
+        }
+
+        public static class ClassLabel
+        {
+            public const string CLASS_ID = ClassKey.CLASS_SPACE + ClassKey.ID;
+            public const string CLASS_NAME = ClassKey.CLASS_SPACE + ClassKey.NAME;
+            public const string CLASS_REQUIRED_APPEAL = ClassKey.CLASS_SPACE + ClassKey.REQUIRED_APPEAL;
+            public const string CLASS_QUOTA = ClassKey.CLASS_SPACE + ClassKey.QUOTA;
+        }
+
+        #endregion
+
         public static class Table
         {
             public const string TABLE = "TBL_";
@@ -73,21 +125,21 @@
 
         public static class ClassColumn
         {
-            public const string CLASS_ID = "ClassID";
-            public const string CLASS_NAME = "ClassName";
-            public const string CLASS_REQUIRED_APPEAL = "ClassRequiredAppeal";
-            public const string CLASS_QUOTA = "ClassQuota";
+            public const string CLASS_ID = ClassKey.CLASS + ClassKey.ID;
+            public const string CLASS_NAME = ClassKey.CLASS + ClassKey.NAME;
+            public const string CLASS_REQUIRED_APPEAL = ClassKey.CLASS + ClassKey.REQUIRED_APPEAL;
+            public const string CLASS_QUOTA = ClassKey.CLASS + ClassKey.QUOTA;
         }
 
         public static class StudentColumn
         {
-            public const string STUDENT_ID = "StudentID";
-            public const string STUDENT_NAME = "StudentName";
-            public const string STUDENT_NUMBER = "StudentNumber";
-            public const string STUDENT_PASSWORD = "StudentPassword";
-            public const string STUDENT_PHOTO = "StudentPhoto";
-            public const string STUDENT_BALANCE = "StudentBalance";
-            public const string STUDENT_STATUS = "StudentStatus";
+            public const string STUDENT_ID = StudentKey.STUDENT + StudentKey.ID;
+            public const string STUDENT_NAME = StudentKey.STUDENT + StudentKey.NAME;
+            public const string STUDENT_NUMBER = StudentKey.STUDENT + StudentKey.NUMBER;
+            public const string STUDENT_PASSWORD = StudentKey.STUDENT + StudentKey.PASSWORD;
+            public const string STUDENT_PHOTO = StudentKey.STUDENT + StudentKey.PHOTO;
+            public const string STUDENT_BALANCE = StudentKey.STUDENT + StudentKey.BALANCE;
+            public const string STUDENT_STATUS = StudentKey.STUDENT + StudentKey.STATUS;
         }
 
         public static class TeacherColumn
@@ -114,7 +166,7 @@
             public const string STUDENT_UPDATE = "StudentUpdate" + FileExtension.ASPX;
         }
 
-        public static class SessionKey
+        public static class SessionRoleKey
         {
             public const string STUDENT = "Student";
             public const string TEACHER = "Teacher";

@@ -11,14 +11,14 @@
     </ul>
     <table class="table table-bordered table-hover ">
         <tr>
-            <th>Student ID</th>
-            <th>Student Name</th>
-            <th>Student Number</th>
-            <th>Student Password</th>
-            <th>Student Photo</th>
-            <th>Student Balance</th>
-            <th>Student Status</th>
-            <th>Operations</th>
+            <th><%=StudentLabel.STUDENT_ID %></th>
+            <th><%=StudentLabel.STUDENT_NAME %></th>
+            <th><%=StudentLabel.STUDENT_PASSWORD %></th>
+            <th><%=StudentLabel.STUDENT_NUMBER %></th>
+            <th><%=StudentLabel.STUDENT_PASSWORD %></th>
+            <th><%=StudentLabel.STUDENT_PHOTO %></th>
+            <th><%=StudentLabel.STUDENT_BALANCE %></th>
+            <th><%=StudentLabel.STUDENT_STATUS %></th>
         </tr>
         <tbody>
             <asp:Repeater ID="Repeater1" runat="server">
