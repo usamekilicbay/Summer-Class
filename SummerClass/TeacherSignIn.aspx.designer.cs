@@ -15,6 +15,15 @@ namespace SummerClass
     {
 
         /// <summary>
+        /// FORM_TeacherSignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm FORM_TeacherSignIn;
+
+        /// <summary>
         /// LBL_TeacherName control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace SummerClass
         protected global::System.Web.UI.WebControls.Label LBL_TeacherName;
 
         /// <summary>
-        /// TXTBOX_TEACHER_NAME control.
+        /// TXTBOX_TeacherName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TXTBOX_TEACHER_NAME;
+        protected global::System.Web.UI.WebControls.TextBox TXTBOX_TeacherName;
 
         /// <summary>
         /// LBL_TeacherPassword control.

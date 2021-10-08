@@ -7,10 +7,11 @@
         <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp; Student Sign In</a></li>
         <li class="active"><a href="TeacherSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher Sign In</a></li>
     </ul>
-    <form id="FORM_TeacherSignIn">
+    <form id="FORM_TeacherSignIn" runat="server">
+        <br />
         <div>
             <asp:Label ID="LBL_TeacherName" for="TXTBOX_TeacherName" runat="server" Text="Teacher Name"></asp:Label>
-            <asp:TextBox ID="TXTBOX_TEACHER_NAME" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="TXTBOX_TeacherName" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
         <br />
         <div>
