@@ -11,61 +11,52 @@ namespace SummerClass
 {
 
 
-    public partial class Login
+    public partial class TeacherSignIn
     {
 
         /// <summary>
-        /// FORM_StudentSignIn control.
+        /// LBL_TeacherName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm FORM_StudentSignIn;
+        protected global::System.Web.UI.WebControls.Label LBL_TeacherName;
 
         /// <summary>
-        /// LBL_StudentNumber control.
+        /// TXTBOX_TEACHER_NAME control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_StudentNumber;
+        protected global::System.Web.UI.WebControls.TextBox TXTBOX_TEACHER_NAME;
 
         /// <summary>
-        /// TXTBOX_StudentNumber control.
+        /// LBL_TeacherPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TXTBOX_StudentNumber;
+        protected global::System.Web.UI.WebControls.Label LBL_TeacherPassword;
 
         /// <summary>
-        /// LBL_StudentPassword control.
+        /// TXTBOX_TeacherPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBL_StudentPassword;
+        protected global::System.Web.UI.WebControls.TextBox TXTBOX_TeacherPassword;
 
         /// <summary>
-        /// TXTBOX_StudentPassword control.
+        /// BTN_SignIn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TXTBOX_StudentPassword;
-
-        /// <summary>
-        /// BTN_SigIn control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTN_SigIn;
+        protected global::System.Web.UI.WebControls.Button BTN_SignIn;
     }
 }

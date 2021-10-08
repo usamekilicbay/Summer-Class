@@ -79,6 +79,7 @@
     <Content Include="StudentList.aspx" />
     <Content Include="StudentSignOut.aspx" />
     <Content Include="StudentUpdate.aspx" />
+    <Content Include="TeacherSignIn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -162,6 +163,13 @@
     </Compile>
     <Compile Include="StudentUpdate.aspx.designer.cs">
       <DependentUpon>StudentUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherSignIn.aspx.cs">
+      <DependentUpon>TeacherSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherSignIn.aspx.designer.cs">
+      <DependentUpon>TeacherSignIn.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
