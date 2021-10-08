@@ -47,7 +47,7 @@
             <ul id="UL_SignInAndSignUp" runat="server" class="nav navbar-nav navbar-right">
                 <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp; Sign Up</a></li>
                 <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Student Sign In</a></li>
-                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher Sign In</a></li>
+                <li><a href="TeacherSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher Sign In</a></li>
             </ul>
             <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
                 <li><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
