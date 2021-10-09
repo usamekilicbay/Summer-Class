@@ -30,16 +30,7 @@ namespace DataAccessLayer
             if (!sqlDataReader.Read())
                 return null;
 
-            EntityStudent entityStudent = new EntityStudent
-            {
-                StudentID = Convert.ToInt32(sqlDataReader[STUDENT_ID]),
-                StudentName = sqlDataReader[STUDENT_NAME].ToString(),
-                StudentNumber = (string)sqlDataReader[STUDENT_NUMBER],
-                StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
-                StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
-                StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE]),
-                StudentStatus = (RoleStatus)Convert.ToInt32(Convert.ToBoolean(sqlDataReader[STUDENT_STATUS]))
-            };
+            EntityStudent entityStudent = GetStudentEntity(sqlDataReader);
 
             sqlDataReader.Close();
 
@@ -82,16 +73,7 @@ namespace DataAccessLayer
 
             while (sqlDataReader.Read())
             {
-                EntityStudent entityStudent = new EntityStudent
-                {
-                    StudentID = Convert.ToInt32(sqlDataReader[STUDENT_ID].ToString()),
-                    StudentName = sqlDataReader[STUDENT_NAME].ToString(),
-                    StudentNumber = sqlDataReader[STUDENT_NUMBER].ToString(),
-                    StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
-                    StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
-                    StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE].ToString()),
-                    StudentStatus = (RoleStatus)Convert.ToInt32(sqlDataReader[STUDENT_STATUS])
-                };
+                EntityStudent entityStudent = GetStudentEntity(sqlDataReader);
 
                 entityStudents.Add(entityStudent);
             }
@@ -99,6 +81,20 @@ namespace DataAccessLayer
             sqlDataReader.Close();
 
             return entityStudents;
+        }
+
+        private static EntityStudent GetStudentEntity(SqlDataReader sqlDataReader)
+        {
+            return new EntityStudent
+            {
+                StudentID = Convert.ToInt32(sqlDataReader[STUDENT_ID].ToString()),
+                StudentName = sqlDataReader[STUDENT_NAME].ToString(),
+                StudentNumber = sqlDataReader[STUDENT_NUMBER].ToString(),
+                StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
+                StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
+                StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE].ToString()),
+                StudentStatus = (RoleStatus)Convert.ToInt32(sqlDataReader[STUDENT_STATUS])
+            };
         }
     }
 
