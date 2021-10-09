@@ -2,7 +2,7 @@
 {
     public static class Types
     {
-        public enum StudentStatus
+        public enum RoleStatus
         {
             PASSIVE,
             ACTIVE

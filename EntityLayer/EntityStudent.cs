@@ -27,7 +27,7 @@ namespace EntityLayer
         private double _studentBalance;
         public double StudentBalance { get => _studentBalance; set => _studentBalance = value; }
 
-        private StudentStatus _studentStatus;
-        public StudentStatus StudentStatus { get => _studentStatus; set => _studentStatus = value; }
+        private RoleStatus _studentStatus;
+        public RoleStatus StudentStatus { get => _studentStatus; set => _studentStatus = value; }
     }
 }

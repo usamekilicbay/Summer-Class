@@ -30,11 +30,11 @@ namespace SummerClass
             TXTBOX_StudentPhoto.Text = entityStudent.StudentPhoto;
             TXTBOX_StudentBalance.Text = entityStudent.StudentBalance.ToString();
 
-            Array statuses = Enum.GetNames(typeof(StudentStatus));
+            Array statuses = Enum.GetNames(typeof(RoleStatus));
 
             for (int i = 0; i < statuses.Length; i++)
             {
-                DDL_StudentStatus.Items.Add(((StudentStatus)i).ToString());
+                DDL_StudentStatus.Items.Add(((RoleStatus)i).ToString());
                 DDL_StudentStatus.Items[i].Value = i.ToString();
             }
 
@@ -51,7 +51,7 @@ namespace SummerClass
                 StudentPassword = TXTBOX_StudentPassword.Text,
                 StudentPhoto = TXTBOX_StudentPhoto.Text,
                 StudentBalance = Convert.ToDouble(TXTBOX_StudentBalance.Text),
-                StudentStatus = (StudentStatus)Enum.Parse(typeof(StudentStatus), DDL_StudentStatus.SelectedItem.Value)
+                StudentStatus = (RoleStatus)Enum.Parse(typeof(RoleStatus), DDL_StudentStatus.SelectedItem.Value)
             };
 
             StudentBusinessLogic.StudentUpdate(entityStudent);

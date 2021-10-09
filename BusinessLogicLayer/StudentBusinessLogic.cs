@@ -29,7 +29,7 @@ namespace BusinessLogicLayer
             return isValidStudent && StudentDataAccess.UpdateStudent(entityStudent);
         }
 
-        public static bool ChangeStudentStatus(int studentID, StudentStatus studentStatus)
+        public static bool ChangeStudentStatus(int studentID, RoleStatus studentStatus)
         {
             return StudentDataAccess.ChangeStudentStatus(studentID, studentStatus);
         }

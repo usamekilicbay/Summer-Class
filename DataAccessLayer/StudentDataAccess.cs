@@ -38,7 +38,7 @@ namespace DataAccessLayer
                 StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
                 StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
                 StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE]),
-                StudentStatus = (StudentStatus)Convert.ToInt32(Convert.ToBoolean(sqlDataReader[STUDENT_STATUS]))
+                StudentStatus = (RoleStatus)Convert.ToInt32(Convert.ToBoolean(sqlDataReader[STUDENT_STATUS]))
             };
 
             sqlDataReader.Close();
@@ -62,7 +62,7 @@ namespace DataAccessLayer
             return sqlCommand.ExecuteNonQuery() > 0;
         }
 
-        public static bool ChangeStudentStatus(int studentID, StudentStatus studentStatus)
+        public static bool ChangeStudentStatus(int studentID, RoleStatus studentStatus)
         {
             string studentIDQuery = $"{STUDENT_STATUS} = '{studentID}'";
             string studentStatusQuery = $"{STUDENT_STATUS} = '{Convert.ToBoolean(studentStatus)}'";
@@ -90,7 +90,7 @@ namespace DataAccessLayer
                     StudentPassword = sqlDataReader[STUDENT_PASSWORD].ToString(),
                     StudentPhoto = sqlDataReader[STUDENT_PHOTO].ToString(),
                     StudentBalance = Convert.ToDouble(sqlDataReader[STUDENT_BALANCE].ToString()),
-                    StudentStatus = (StudentStatus)Convert.ToInt32(sqlDataReader[STUDENT_STATUS])
+                    StudentStatus = (RoleStatus)Convert.ToInt32(sqlDataReader[STUDENT_STATUS])
                 };
 
                 entityStudents.Add(entityStudent);

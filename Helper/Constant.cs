@@ -45,29 +45,15 @@
 
             #region FROM "TABLE" WHERE
 
-            public const string FROM_APPEALS_WHERE = FROM + Table.APPEALS + SET;
-            public const string FROM_CLASSES_WHERE = FROM + Table.CLASSES + SET;
-            public const string FROM_STUDENTS_WHERE = FROM + Table.STUDENTS + SET;
-            public const string FROM_TEACHERS_WHERE = FROM + Table.TEACHERS + SET;
+            public const string FROM_APPEALS_WHERE = FROM + Table.APPEALS + WHERE;
+            public const string FROM_CLASSES_WHERE = FROM + Table.CLASSES + WHERE;
+            public const string FROM_STUDENTS_WHERE = FROM + Table.STUDENTS + WHERE;
+            public const string FROM_TEACHERS_WHERE = FROM + Table.TEACHERS + WHERE;
 
             #endregion
         }
 
         #region KEY
-
-        public static class StudentKey
-        {
-            public const string STUDENT = "Student";
-            public const string STUDENT_SPACE = "Student ";
-
-            public const string ID = "ID";
-            public const string NAME = "Name";
-            public const string NUMBER = "Number";
-            public const string PASSWORD = "Password";
-            public const string PHOTO = "Photo";
-            public const string BALANCE = "Balance";
-            public const string STATUS = "Status";
-        }
 
         public static class ClassKey
         {
@@ -80,9 +66,36 @@
             public const string QUOTA = "ID";
         }
 
+        public static class StudentKey
+        {
+            public const string STUDENT = "Student";
+            public const string STUDENT_SPACE = STUDENT + " ";
+
+            public const string ID = "ID";
+            public const string NAME = "Name";
+            public const string NUMBER = "Number";
+            public const string PASSWORD = "Password";
+            public const string PHOTO = "Photo";
+            public const string BALANCE = "Balance";
+            public const string STATUS = "Status";
+        }
+
+        public static class TeacherKey
+        {
+            public const string TEACHER = "Teacher";
+            public const string TEACHER_SPACE = TEACHER + " ";
+
+            public const string ID = "ID";
+            public const string NAME = "Name";
+            public const string PASSWORD = "Password";
+            public const string PHOTO = "Photo";
+            public const string BRANCH = "Branch";
+            public const string STATUS = "Status";
+        }
+
         #endregion
 
-                #region LABEL
+        #region LABEL
 
         public static class StudentLabel
         {
@@ -144,9 +157,12 @@
 
         public static class TeacherColumn
         {
-            public const string TEACHER_ID = "StudentID";
-            public const string TEACHER_NAME = "StudentName";
-            public const string TEACHER_BRANCH = "TeacherBranch";
+            public const string TEACHER_ID = TeacherKey.TEACHER + TeacherKey.ID;
+            public const string TEACHER_NAME = TeacherKey.TEACHER + TeacherKey.NAME;
+            public const string TEACHER_PASSWORD = TeacherKey.TEACHER + TeacherKey.PASSWORD;
+            public const string TEACHER_PHOTO = TeacherKey.TEACHER + TeacherKey.PHOTO;
+            public const string TEACHER_BRANCH = TeacherKey.TEACHER + TeacherKey.BRANCH;
+            public const string TEACHER_STATUS = TeacherKey.TEACHER + TeacherKey.STATUS;
         }
 
         #endregion
