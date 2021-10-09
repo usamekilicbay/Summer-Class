@@ -24,7 +24,7 @@ namespace EntityLayer
         private int _teacherBranch;
         public int TeacherBranch { get => _teacherBranch; set => _teacherBranch = value; }
 
-        private RoleStatus _roleStatus;
-        public RoleStatus RoleStatus { get => _roleStatus; set => _roleStatus = value; }
+        private RoleStatus _teacherStatus;
+        public RoleStatus TeacherStatus { get => _teacherStatus; set => _teacherStatus = value; }
     }
 }

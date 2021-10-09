@@ -12,10 +12,9 @@ using static Helper.Types;
 
 namespace DataAccessLayer
 {
+    #region CRUD
     public partial class DataAccessTeacher
     {
-        #region CRUD
-
         public static int CreateTeacher(EntityTeacher entityTeacher)
         {
             SqlCommand sqlCommand = new SqlCommand($"{INSERT_INTO_TEACHERS} ({TEACHER_ID}, {TEACHER_NAME}, {TEACHER_BRANCH}) {VALUES} ('{entityTeacher.TeacherID}', '{entityTeacher.TeacherName}', {entityTeacher.TeacherBranch})", Connection.sqlConnection);
@@ -33,12 +32,7 @@ namespace DataAccessLayer
             if (!sqlDataReader.Read())
                 return null;
 
-            EntityTeacher entityTeacher = new EntityTeacher
-            {
-                TeacherID = Convert.ToInt32(sqlDataReader[TEACHER_ID]),
-                TeacherName = sqlDataReader[TEACHER_NAME].ToString(),
-                TeacherBranch = Convert.ToInt32(sqlDataReader[TEACHER_BRANCH])
-            };
+            EntityTeacher entityTeacher = GetTeacherEntity(sqlDataReader);
 
             sqlDataReader.Close();
 
@@ -68,10 +62,59 @@ namespace DataAccessLayer
             return sqlCommand.ExecuteNonQuery() > 0;
         }
 
-        #endregion
+        public static List<EntityTeacher> GetTeacherList()
+        {
+            List<EntityTeacher> entityTeachers = new List<EntityTeacher>();
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT_ALL_FROM_TEACHERS}", Connection.sqlConnection);
+            ConnectionHelper.OpenConnectionIfNot(sqlCommand);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-        #region SESSION
+            while (sqlDataReader.Read())
+                entityTeachers.Add(GetTeacherEntity(sqlDataReader));
 
-        #endregion
+            sqlDataReader.Close();
+
+            return entityTeachers;
+        }
+
+        private static EntityTeacher GetTeacherEntity(SqlDataReader sqlDataReader)
+        {
+            return new EntityTeacher
+            {
+                TeacherID = Convert.ToInt32(sqlDataReader[TEACHER_ID].ToString()),
+                TeacherName = sqlDataReader[TEACHER_NAME].ToString(),
+                TeacherPassword = sqlDataReader[TEACHER_PASSWORD].ToString(),
+                TeacherPhoto = sqlDataReader[TEACHER_PHOTO].ToString(),
+                TeacherBranch = Convert.ToInt32(sqlDataReader[TEACHER_BRANCH].ToString()),
+                TeacherStatus = (RoleStatus)Convert.ToInt32(sqlDataReader[TEACHER_STATUS])
+            };
+        }
     }
+    #endregion
+
+    #region SESSION
+
+    public partial class DataAccessTeacher
+    {
+        public static bool TeacherSignIn(EntityTeacher entityTeacher)
+        {
+            string teacherNameQuery = $"{TEACHER_NAME} = '{entityTeacher.TeacherName}'";
+
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {TEACHER_NAME}, {TEACHER_PASSWORD} {FROM_TEACHERS_WHERE} {teacherNameQuery}", Connection.sqlConnection);
+            ConnectionHelper.OpenConnectionIfNot(sqlCommand);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            if (!sqlDataReader.Read())
+                return false;
+
+            string teacherPassword = sqlDataReader[TEACHER_PASSWORD].ToString();
+            
+            sqlDataReader.Close();
+
+            return String.Equals(entityTeacher.TeacherPassword, teacherPassword);
+        }
+    }
+
+    #endregion
+}
 }

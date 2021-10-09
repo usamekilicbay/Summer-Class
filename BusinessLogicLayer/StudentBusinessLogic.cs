@@ -12,9 +12,7 @@ namespace BusinessLogicLayer
     {
         public static int CreateStudent(EntityStudent entityStudent)
         {
-            bool isValidStudent = !String.IsNullOrEmpty(entityStudent.StudentName) && !String.IsNullOrEmpty(entityStudent.StudentNumber) && !String.IsNullOrEmpty(entityStudent.StudentPassword) && !String.IsNullOrEmpty(entityStudent.StudentPhoto);
-
-            return isValidStudent ? StudentDataAccess.CreateStudent(entityStudent) : -1;
+            return IsStudentValid(entityStudent) ? StudentDataAccess.CreateStudent(entityStudent) : -1;
         }
 
         public static EntityStudent GetStudent(int studentID)
@@ -24,9 +22,7 @@ namespace BusinessLogicLayer
 
         public static bool StudentUpdate(EntityStudent entityStudent)
         {
-            bool isValidStudent = !String.IsNullOrEmpty(entityStudent.StudentName) && !String.IsNullOrEmpty(entityStudent.StudentNumber) && !String.IsNullOrEmpty(entityStudent.StudentPassword) && !String.IsNullOrEmpty(entityStudent.StudentPhoto);
-
-            return isValidStudent && StudentDataAccess.UpdateStudent(entityStudent);
+            return IsStudentValid(entityStudent) && StudentDataAccess.UpdateStudent(entityStudent);
         }
 
         public static bool ChangeStudentStatus(int studentID, RoleStatus studentStatus)
@@ -39,6 +35,10 @@ namespace BusinessLogicLayer
             return StudentDataAccess.GetStudentList();
         }
        
+        private static bool IsStudentValid(EntityStudent entityStudent)
+        {
+            return !String.IsNullOrEmpty(entityStudent.StudentName) && !String.IsNullOrEmpty(entityStudent.StudentNumber) && !String.IsNullOrEmpty(entityStudent.StudentPassword) && !String.IsNullOrEmpty(entityStudent.StudentPhoto);
+        }
     }
 
     #endregion
@@ -51,7 +51,7 @@ namespace BusinessLogicLayer
         {
             bool isValidCredential = !String.IsNullOrEmpty(entityStudent.StudentNumber) && !String.IsNullOrEmpty(entityStudent.StudentPassword);
 
-            return isValidCredential && StudentDataAccess.StudentLogin(entityStudent);
+            return isValidCredential && StudentDataAccess.StudentSignIn(entityStudent);
         }
     }
 

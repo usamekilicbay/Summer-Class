@@ -72,11 +72,7 @@ namespace DataAccessLayer
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             while (sqlDataReader.Read())
-            {
-                EntityStudent entityStudent = GetStudentEntity(sqlDataReader);
-
-                entityStudents.Add(entityStudent);
-            }
+                entityStudents.Add(GetStudentEntity(sqlDataReader));
 
             sqlDataReader.Close();
 
@@ -104,30 +100,22 @@ namespace DataAccessLayer
 
     public partial class StudentDataAccess
     {
-        public static bool StudentLogin(EntityStudent entityStudent)
+        public static bool StudentSignIn(EntityStudent entityStudent)
         {
             string studentNumberQuery = $"{STUDENT_NUMBER} = '{entityStudent.StudentNumber}'";
+
             SqlCommand sqlCommand = new SqlCommand($"{SELECT} {STUDENT_NUMBER}, {STUDENT_PASSWORD} {FROM_STUDENTS_WHERE} {studentNumberQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             if (!sqlDataReader.Read())
-            {
-                sqlDataReader.Close();
                 return false;
-            }
 
-            string studentNumber = sqlDataReader[STUDENT_NUMBER].ToString();
-            string studentPasswprd = sqlDataReader[STUDENT_PASSWORD].ToString();
-
-            if (!String.IsNullOrEmpty(studentNumber) && String.Equals(entityStudent.StudentPassword, studentPasswprd))
-            {
-                sqlDataReader.Close();
-                return true;
-            }
+            string studentPassword = sqlDataReader[STUDENT_PASSWORD].ToString();
 
             sqlDataReader.Close();
-            return false;
+
+            return String.Equals(entityStudent.StudentPassword, studentPassword);
         }
     }
 
