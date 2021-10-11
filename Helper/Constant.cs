@@ -123,7 +123,7 @@
             public const string TABLE = "TBL_";
             public const string APPEALS = TABLE + "Appeals ";
             public const string CLASSES = TABLE + "Classes ";
-            public const string STUDENTS = TABLE + "Students ";
+            public const string STUDENTS = TABLE + StudentKey.STUDENT + "s ";
             public const string TEACHERS = TABLE + "Teachers ";
         }
 
@@ -133,7 +133,7 @@
         {
             public const string APPEAL_ID = "AppealID";
             public const string CLASS_ID = "ClassID";
-            public const string STUDENT_ID = "StudentID";
+            public const string STUDENT_ID = StudentKey.STUDENT + "ID";
         }
 
         public static class ClassColumn
@@ -169,22 +169,49 @@
 
         public static class PageName
         {
-            public const string CLASS_APPEAL = "ClassAppeal" + FileExtension.ASPX;
-            public const string CLASS_DELETE = "ClassDelete" + FileExtension.ASPX;
-            public const string CLASS_LIST = "ClassList" + FileExtension.ASPX;
-            public const string CLASS_UPDATE = "ClassUpdate" + FileExtension.ASPX;
-            public const string STUDENT_CREATE = "Student" + FileExtension.ASPX;
-            public const string STUDENT_LIST = "StudentList" + FileExtension.ASPX;
-            public const string STUDENT_SIGN_IN = "StudentSignIn" + FileExtension.ASPX;
-            public const string STUDENT_SIGN_OUT = "StudentSignOut" + FileExtension.ASPX;
-            public const string STUDENT_SIGN_UP = "StudentSignUp" + FileExtension.ASPX;
-            public const string STUDENT_STATUS_PACIFY = "StudentStatusPacify" + FileExtension.ASPX;
-            public const string STUDENT_UPDATE = "StudentUpdate" + FileExtension.ASPX;
+            private const string APPEAL= "Appeal";
+            private const string DELETE= "Delete";
+            private const string LIST= "List";
+            private const string PACIFY_STATUS = "PacifyStatus";
+            private const string SIGN_IN = "SignIn";
+            private const string SIGN_OUT = "SignOut";
+            private const string SIGN_UP = "SignUp";
+            private const string UPDATE = "Update";
+
+
+            public static class ClassPage
+            {
+                public const string CLASS_APPEAL = ClassKey.CLASS + APPEAL+ FileExtension.ASPX;
+                public const string CLASS_DELETE = ClassKey.CLASS + DELETE + FileExtension.ASPX;
+                public const string CLASS_LIST = ClassKey.CLASS + LIST + FileExtension.ASPX;
+                public const string CLASS_UPDATE = ClassKey.CLASS + UPDATE + FileExtension.ASPX;
+            }
+
+            public static class StudentPage
+            {
+                public const string STUDENT_CREATE = StudentKey.STUDENT + "" + FileExtension.ASPX;
+                public const string STUDENT_LIST = StudentKey.STUDENT + LIST + FileExtension.ASPX;
+                public const string STUDENT_SIGN_IN = StudentKey.STUDENT + SIGN_IN + FileExtension.ASPX;
+                public const string STUDENT_SIGN_OUT = StudentKey.STUDENT + SIGN_OUT + FileExtension.ASPX;
+                public const string STUDENT_SIGN_UP = StudentKey.STUDENT + SIGN_UP + FileExtension.ASPX;
+                public const string STUDENT_STATUS_PACIFY = StudentKey.STUDENT + PACIFY_STATUS + FileExtension.ASPX;
+                public const string STUDENT_UPDATE = StudentKey.STUDENT + UPDATE + FileExtension.ASPX;
+            }
+
+            public static class TeacherPage
+            {
+                public const string TEACHER_CREATE = TeacherKey.TEACHER + "" + FileExtension.ASPX;
+                public const string TEACHER_SIGN_IN = TeacherKey.TEACHER + SIGN_IN + FileExtension.ASPX;
+                public const string TEACHER_SIGN_OUT = TeacherKey.TEACHER + SIGN_OUT + FileExtension.ASPX;
+                public const string TEACHER_SIGN_UP = TeacherKey.TEACHER + SIGN_UP + FileExtension.ASPX;
+                public const string TEACHER_STATUS_PACIFY = TeacherKey.TEACHER + PACIFY_STATUS + FileExtension.ASPX;
+                public const string TEACHER_UPDATE = TeacherKey.TEACHER + UPDATE + FileExtension.ASPX;
+            }
         }
 
         public static class SessionRoleKey
         {
-            public const string STUDENT = "Student";
+            public const string STUDENT = StudentKey.STUDENT + "";
             public const string TEACHER = "Teacher";
         }
 

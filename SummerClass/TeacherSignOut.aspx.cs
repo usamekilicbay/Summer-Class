@@ -5,16 +5,15 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 
 namespace SummerClass
 {
-    public partial class StudentLogOut : System.Web.UI.Page
+    public partial class TeacherSignOut : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove(StudentColumn.STUDENT_NUMBER);
-            Response.Redirect(PageName.STUDENT_SIGN_IN);
+            Session.Remove(TeacherColumn.TEACHER_NAME);
+            Response.Redirect(PageName.TEACHER_SIGN_OUT);
         }
     }
 }
