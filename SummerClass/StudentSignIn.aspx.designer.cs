@@ -11,7 +11,7 @@ namespace SummerClass
 {
 
 
-    public partial class Login
+    public partial class StudentSignIn
     {
 
         /// <summary>

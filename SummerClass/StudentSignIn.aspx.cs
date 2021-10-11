@@ -1,12 +1,12 @@
 ﻿using System;
 using BusinessLogicLayer;
 using EntityLayer;
-using Helper.Constant;
+using static Helper.Constant.PageName;
 using static Helper.Types;
 
 namespace SummerClass
 {
-    public partial class Login : System.Web.UI.Page
+    public partial class StudentSignIn : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace SummerClass
             }
 
             Session.Add(SessionRole.STUDENT.ToString(), TXTBOX_StudentNumber.Text);
-            Response.Redirect(PageName.CLASS_LIST);
+            Response.Redirect(ClassPage.CLASS_LIST);
         }
     }
 }

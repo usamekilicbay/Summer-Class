@@ -10,7 +10,7 @@
 
 namespace SummerClass
 {
-    public partial class StudentLogOut
+    public partial class StudentSignOut
     {
     }
 }

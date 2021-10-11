@@ -4,10 +4,8 @@ using Helper.Constant;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using static Helper.Types;
+using static Helper.Constant.PageName;
 
 namespace SummerClass
 {
@@ -33,7 +31,7 @@ namespace SummerClass
             }
 
             Session.Add(SessionRole.TEACHER.ToString(), TXTBOX_TeacherName.Text);
-            Response.Redirect(PageName.CLASS_LIST);
+            Response.Redirect(ClassPage.CLASS_LIST);
         }
     }
 }

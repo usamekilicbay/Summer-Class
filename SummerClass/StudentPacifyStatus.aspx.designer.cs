@@ -10,7 +10,7 @@
 
 namespace SummerClass
 {
-    public partial class StudentDelete
+    public partial class StudentPacifyStatus
     {
     }
 }
