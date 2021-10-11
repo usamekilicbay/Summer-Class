@@ -13,6 +13,7 @@ using static Helper.Types;
 namespace DataAccessLayer
 {
     #region CRUD
+
     public partial class DataAccessTeacher
     {
         public static int CreateTeacher(EntityTeacher entityTeacher)
@@ -90,6 +91,7 @@ namespace DataAccessLayer
             };
         }
     }
+
     #endregion
 
     #region SESSION
@@ -116,5 +118,4 @@ namespace DataAccessLayer
     }
 
     #endregion
-}
 }
