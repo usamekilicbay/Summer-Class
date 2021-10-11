@@ -1,11 +1,8 @@
 ﻿using EntityLayer;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Helper;
 using static Helper.Constant.SQLQuery;
 using static Helper.Constant.TeacherColumn;
 using static Helper.Types;
@@ -14,7 +11,7 @@ namespace DataAccessLayer
 {
     #region CRUD
 
-    public partial class DataAccessTeacher
+    public partial class TeacherDataAccess
     {
         public static int CreateTeacher(EntityTeacher entityTeacher)
         {
@@ -96,7 +93,7 @@ namespace DataAccessLayer
 
     #region SESSION
 
-    public partial class DataAccessTeacher
+    public partial class TeacherDataAccess
     {
         public static bool TeacherSignIn(EntityTeacher entityTeacher)
         {
@@ -110,7 +107,7 @@ namespace DataAccessLayer
                 return false;
 
             string teacherPassword = sqlDataReader[TEACHER_PASSWORD].ToString();
-            
+
             sqlDataReader.Close();
 
             return String.Equals(entityTeacher.TeacherPassword, teacherPassword);

@@ -11,31 +11,31 @@ namespace BusinessLogicLayer
 {
     #region CRUD
 
-    public partial class BusinessLogicTeacher
+    public partial class TeacherBusinessLogic
     {
         public static int CreateTeacher(EntityTeacher entityTeacher)
         {
-            return IsValidTeacher(entityTeacher) ? DataAccessTeacher.CreateTeacher(entityTeacher) : -1;
+            return IsValidTeacher(entityTeacher) ? TeacherDataAccess.CreateTeacher(entityTeacher) : -1;
         }
 
         public static EntityTeacher GetTeacher(int teacherID)
         {
-            return DataAccessTeacher.GetTeacher(teacherID);
+            return TeacherDataAccess.GetTeacher(teacherID);
         }
 
         public static bool UpdateTeacher(EntityTeacher entityTeacher)
         {
-            return IsValidTeacher(entityTeacher) && DataAccessTeacher.UpdateTeacher(entityTeacher);
+            return IsValidTeacher(entityTeacher) && TeacherDataAccess.UpdateTeacher(entityTeacher);
         }
 
         public static bool ChangeTeacherStatus(int teacherID, RoleStatus teacherStatus)
         {
-            return DataAccessTeacher.ChangetTeacherStatus(teacherID, teacherStatus);
+            return TeacherDataAccess.ChangetTeacherStatus(teacherID, teacherStatus);
         }
 
         public static List<EntityTeacher> GetTeacherList()
         {
-            return DataAccessTeacher.GetTeacherList();
+            return TeacherDataAccess.GetTeacherList();
         }
 
         public static bool IsValidTeacher(EntityTeacher entityTeacher)
@@ -48,13 +48,13 @@ namespace BusinessLogicLayer
 
     #region SESSION
 
-    public partial class BusinessLogicTeacher
+    public partial class TeacherBusinessLogic
     {
         public static bool TeacherSignIn(EntityTeacher entityTeacher)
         {
             bool isValidCredential = !String.IsNullOrEmpty(entityTeacher.TeacherName) && !String.IsNullOrEmpty(entityTeacher.TeacherPassword);
 
-            return isValidCredential && DataAccessTeacher.TeacherSignIn(entityTeacher);
+            return isValidCredential && TeacherDataAccess.TeacherSignIn(entityTeacher);
         }
     }
 
