@@ -169,9 +169,9 @@
 
         public static class PageName
         {
-            private const string APPEAL= "Appeal";
-            private const string DELETE= "Delete";
-            private const string LIST= "List";
+            private const string APPEAL = "Appeal";
+            private const string DELETE = "Delete";
+            private const string LIST = "List";
             private const string PACIFY_STATUS = "PacifyStatus";
             private const string SIGN_IN = "SignIn";
             private const string SIGN_OUT = "SignOut";
@@ -181,7 +181,7 @@
 
             public static class ClassPage
             {
-                public const string CLASS_APPEAL = ClassKey.CLASS + APPEAL+ FileExtension.ASPX;
+                public const string CLASS_APPEAL = ClassKey.CLASS + APPEAL + FileExtension.ASPX;
                 public const string CLASS_DELETE = ClassKey.CLASS + DELETE + FileExtension.ASPX;
                 public const string CLASS_LIST = ClassKey.CLASS + LIST + FileExtension.ASPX;
                 public const string CLASS_UPDATE = ClassKey.CLASS + UPDATE + FileExtension.ASPX;
@@ -212,7 +212,7 @@
         public static class SessionRoleKey
         {
             public const string STUDENT = StudentKey.STUDENT + "";
-            public const string TEACHER = "Teacher";
+            public const string TEACHER = TeacherKey.TEACHER + "";
         }
 
         public static class FileExtension
