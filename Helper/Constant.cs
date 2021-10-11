@@ -55,41 +55,26 @@
 
         #region KEY
 
-        public static class ClassKey
+        public static class Key
         {
             public const string CLASS = "Class";
             public const string CLASS_SPACE = "Class ";
-
-            public const string ID = "ID";
-            public const string NAME = "Name";
-            public const string REQUIRED_APPEAL = "RequiredAppeal";
-            public const string QUOTA = "ID";
-        }
-
-        public static class StudentKey
-        {
+            
             public const string STUDENT = "Student";
             public const string STUDENT_SPACE = STUDENT + " ";
 
+            public const string TEACHER = "Teacher";
+            public const string TEACHER_SPACE = TEACHER + " ";
+         
+            public const string BALANCE = "Balance";
+            public const string BRANCH = "Branch";
             public const string ID = "ID";
             public const string NAME = "Name";
             public const string NUMBER = "Number";
             public const string PASSWORD = "Password";
             public const string PHOTO = "Photo";
-            public const string BALANCE = "Balance";
-            public const string STATUS = "Status";
-        }
-
-        public static class TeacherKey
-        {
-            public const string TEACHER = "Teacher";
-            public const string TEACHER_SPACE = TEACHER + " ";
-
-            public const string ID = "ID";
-            public const string NAME = "Name";
-            public const string PASSWORD = "Password";
-            public const string PHOTO = "Photo";
-            public const string BRANCH = "Branch";
+            public const string QUOTA = "ID";
+            public const string REQUIRED_APPEAL = "RequiredAppeal";
             public const string STATUS = "Status";
         }
 
@@ -99,21 +84,21 @@
 
         public static class StudentLabel
         {
-            public const string STUDENT_ID = StudentKey.STUDENT_SPACE + StudentKey.ID;
-            public const string STUDENT_NAME = StudentKey.STUDENT_SPACE + StudentKey.NAME;
-            public const string STUDENT_NUMBER = StudentKey.STUDENT_SPACE + StudentKey.NUMBER;
-            public const string STUDENT_PASSWORD = StudentKey.STUDENT_SPACE + StudentKey.PASSWORD;
-            public const string STUDENT_PHOTO = StudentKey.STUDENT_SPACE + StudentKey.PHOTO;
-            public const string STUDENT_BALANCE = StudentKey.STUDENT_SPACE + StudentKey.BALANCE;
-            public const string STUDENT_STATUS = StudentKey.STUDENT_SPACE + StudentKey.STATUS;
+            public const string STUDENT_ID = Key.STUDENT_SPACE + Key.ID;
+            public const string STUDENT_NAME = Key.STUDENT_SPACE + Key.NAME;
+            public const string STUDENT_NUMBER = Key.STUDENT_SPACE + Key.NUMBER;
+            public const string STUDENT_PASSWORD = Key.STUDENT_SPACE + Key.PASSWORD;
+            public const string STUDENT_PHOTO = Key.STUDENT_SPACE + Key.PHOTO;
+            public const string STUDENT_BALANCE = Key.STUDENT_SPACE + Key.BALANCE;
+            public const string STUDENT_STATUS = Key.STUDENT_SPACE + Key.STATUS;
         }
 
         public static class ClassLabel
         {
-            public const string CLASS_ID = ClassKey.CLASS_SPACE + ClassKey.ID;
-            public const string CLASS_NAME = ClassKey.CLASS_SPACE + ClassKey.NAME;
-            public const string CLASS_REQUIRED_APPEAL = ClassKey.CLASS_SPACE + ClassKey.REQUIRED_APPEAL;
-            public const string CLASS_QUOTA = ClassKey.CLASS_SPACE + ClassKey.QUOTA;
+            public const string CLASS_ID = Key.CLASS_SPACE + Key.ID;
+            public const string CLASS_NAME = Key.CLASS_SPACE + Key.NAME;
+            public const string CLASS_REQUIRED_APPEAL = Key.CLASS_SPACE + Key.REQUIRED_APPEAL;
+            public const string CLASS_QUOTA = Key.CLASS_SPACE + Key.QUOTA;
         }
 
         #endregion
@@ -123,7 +108,7 @@
             public const string TABLE = "TBL_";
             public const string APPEALS = TABLE + "Appeals ";
             public const string CLASSES = TABLE + "Classes ";
-            public const string STUDENTS = TABLE + StudentKey.STUDENT + "s ";
+            public const string STUDENTS = TABLE + Key.STUDENT + "s ";
             public const string TEACHERS = TABLE + "Teachers ";
         }
 
@@ -133,36 +118,36 @@
         {
             public const string APPEAL_ID = "AppealID";
             public const string CLASS_ID = "ClassID";
-            public const string STUDENT_ID = StudentKey.STUDENT + "ID";
+            public const string STUDENT_ID = Key.STUDENT + "ID";
         }
 
         public static class ClassColumn
         {
-            public const string CLASS_ID = ClassKey.CLASS + ClassKey.ID;
-            public const string CLASS_NAME = ClassKey.CLASS + ClassKey.NAME;
-            public const string CLASS_REQUIRED_APPEAL = ClassKey.CLASS + ClassKey.REQUIRED_APPEAL;
-            public const string CLASS_QUOTA = ClassKey.CLASS + ClassKey.QUOTA;
+            public const string CLASS_ID = Key.CLASS + Key.ID;
+            public const string CLASS_NAME = Key.CLASS + Key.NAME;
+            public const string CLASS_REQUIRED_APPEAL = Key.CLASS + Key.REQUIRED_APPEAL;
+            public const string CLASS_QUOTA = Key.CLASS + Key.QUOTA;
         }
 
         public static class StudentColumn
         {
-            public const string STUDENT_ID = StudentKey.STUDENT + StudentKey.ID;
-            public const string STUDENT_NAME = StudentKey.STUDENT + StudentKey.NAME;
-            public const string STUDENT_NUMBER = StudentKey.STUDENT + StudentKey.NUMBER;
-            public const string STUDENT_PASSWORD = StudentKey.STUDENT + StudentKey.PASSWORD;
-            public const string STUDENT_PHOTO = StudentKey.STUDENT + StudentKey.PHOTO;
-            public const string STUDENT_BALANCE = StudentKey.STUDENT + StudentKey.BALANCE;
-            public const string STUDENT_STATUS = StudentKey.STUDENT + StudentKey.STATUS;
+            public const string STUDENT_ID = Key.STUDENT + Key.ID;
+            public const string STUDENT_NAME = Key.STUDENT + Key.NAME;
+            public const string STUDENT_NUMBER = Key.STUDENT + Key.NUMBER;
+            public const string STUDENT_PASSWORD = Key.STUDENT + Key.PASSWORD;
+            public const string STUDENT_PHOTO = Key.STUDENT + Key.PHOTO;
+            public const string STUDENT_BALANCE = Key.STUDENT + Key.BALANCE;
+            public const string STUDENT_STATUS = Key.STUDENT + Key.STATUS;
         }
 
         public static class TeacherColumn
         {
-            public const string TEACHER_ID = TeacherKey.TEACHER + TeacherKey.ID;
-            public const string TEACHER_NAME = TeacherKey.TEACHER + TeacherKey.NAME;
-            public const string TEACHER_PASSWORD = TeacherKey.TEACHER + TeacherKey.PASSWORD;
-            public const string TEACHER_PHOTO = TeacherKey.TEACHER + TeacherKey.PHOTO;
-            public const string TEACHER_BRANCH = TeacherKey.TEACHER + TeacherKey.BRANCH;
-            public const string TEACHER_STATUS = TeacherKey.TEACHER + TeacherKey.STATUS;
+            public const string TEACHER_ID = Key.TEACHER + Key.ID;
+            public const string TEACHER_NAME = Key.TEACHER + Key.NAME;
+            public const string TEACHER_PASSWORD = Key.TEACHER + Key.PASSWORD;
+            public const string TEACHER_PHOTO = Key.TEACHER + Key.PHOTO;
+            public const string TEACHER_BRANCH = Key.TEACHER + Key.BRANCH;
+            public const string TEACHER_STATUS = Key.TEACHER + Key.STATUS;
         }
 
         #endregion
@@ -181,38 +166,38 @@
 
             public static class ClassPage
             {
-                public const string CLASS_APPEAL = ClassKey.CLASS + APPEAL + FileExtension.ASPX;
-                public const string CLASS_DELETE = ClassKey.CLASS + DELETE + FileExtension.ASPX;
-                public const string CLASS_LIST = ClassKey.CLASS + LIST + FileExtension.ASPX;
-                public const string CLASS_UPDATE = ClassKey.CLASS + UPDATE + FileExtension.ASPX;
+                public const string CLASS_APPEAL = Key.CLASS + APPEAL + FileExtension.ASPX;
+                public const string CLASS_DELETE = Key.CLASS + DELETE + FileExtension.ASPX;
+                public const string CLASS_LIST = Key.CLASS + LIST + FileExtension.ASPX;
+                public const string CLASS_UPDATE = Key.CLASS + UPDATE + FileExtension.ASPX;
             }
 
             public static class StudentPage
             {
-                public const string STUDENT_CREATE = StudentKey.STUDENT + "" + FileExtension.ASPX;
-                public const string STUDENT_LIST = StudentKey.STUDENT + LIST + FileExtension.ASPX;
-                public const string STUDENT_SIGN_IN = StudentKey.STUDENT + SIGN_IN + FileExtension.ASPX;
-                public const string STUDENT_SIGN_OUT = StudentKey.STUDENT + SIGN_OUT + FileExtension.ASPX;
-                public const string STUDENT_SIGN_UP = StudentKey.STUDENT + SIGN_UP + FileExtension.ASPX;
-                public const string STUDENT_STATUS_PACIFY = StudentKey.STUDENT + PACIFY_STATUS + FileExtension.ASPX;
-                public const string STUDENT_UPDATE = StudentKey.STUDENT + UPDATE + FileExtension.ASPX;
+                public const string STUDENT_CREATE = Key.STUDENT + "" + FileExtension.ASPX;
+                public const string STUDENT_LIST = Key.STUDENT + LIST + FileExtension.ASPX;
+                public const string STUDENT_SIGN_IN = Key.STUDENT + SIGN_IN + FileExtension.ASPX;
+                public const string STUDENT_SIGN_OUT = Key.STUDENT + SIGN_OUT + FileExtension.ASPX;
+                public const string STUDENT_SIGN_UP = Key.STUDENT + SIGN_UP + FileExtension.ASPX;
+                public const string STUDENT_STATUS_PACIFY = Key.STUDENT + PACIFY_STATUS + FileExtension.ASPX;
+                public const string STUDENT_UPDATE = Key.STUDENT + UPDATE + FileExtension.ASPX;
             }
 
             public static class TeacherPage
             {
-                public const string TEACHER_CREATE = TeacherKey.TEACHER + "" + FileExtension.ASPX;
-                public const string TEACHER_SIGN_IN = TeacherKey.TEACHER + SIGN_IN + FileExtension.ASPX;
-                public const string TEACHER_SIGN_OUT = TeacherKey.TEACHER + SIGN_OUT + FileExtension.ASPX;
-                public const string TEACHER_SIGN_UP = TeacherKey.TEACHER + SIGN_UP + FileExtension.ASPX;
-                public const string TEACHER_STATUS_PACIFY = TeacherKey.TEACHER + PACIFY_STATUS + FileExtension.ASPX;
-                public const string TEACHER_UPDATE = TeacherKey.TEACHER + UPDATE + FileExtension.ASPX;
+                public const string TEACHER_CREATE = Key.TEACHER + "" + FileExtension.ASPX;
+                public const string TEACHER_SIGN_IN = Key.TEACHER + SIGN_IN + FileExtension.ASPX;
+                public const string TEACHER_SIGN_OUT = Key.TEACHER + SIGN_OUT + FileExtension.ASPX;
+                public const string TEACHER_SIGN_UP = Key.TEACHER + SIGN_UP + FileExtension.ASPX;
+                public const string TEACHER_STATUS_PACIFY = Key.TEACHER + PACIFY_STATUS + FileExtension.ASPX;
+                public const string TEACHER_UPDATE = Key.TEACHER + UPDATE + FileExtension.ASPX;
             }
         }
 
         public static class SessionRoleKey
         {
-            public const string STUDENT = StudentKey.STUDENT + "";
-            public const string TEACHER = TeacherKey.TEACHER + "";
+            public const string STUDENT = Key.STUDENT + "";
+            public const string TEACHER = Key.TEACHER + "";
         }
 
         public static class FileExtension

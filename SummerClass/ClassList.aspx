@@ -26,8 +26,8 @@
                         <td><%#Eval(ClassColumn.CLASS_REQUIRED_APPEAL) %></td>
                         <td><%#Eval(ClassColumn.CLASS_QUOTA) %></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete</asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.ClassPage.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete</asp:HyperLink>
+                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.ClassPage.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update</asp:HyperLink>
                         </td>
                     </tr>
                 </ItemTemplate>
