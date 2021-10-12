@@ -110,9 +110,6 @@
     <Compile Include="ClassUpdate.aspx.designer.cs">
       <DependentUpon>ClassUpdate.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SessionControl.cs">
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="StudentSignIn.aspx.cs">
       <DependentUpon>StudentSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,9 +198,9 @@
       <Project>{98732747-0f7f-4847-b4ea-686121813c18}</Project>
       <Name>EntityLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Helper\Helper.csproj">
+    <ProjectReference Include="..\Helper\Sidekick.csproj">
       <Project>{6e811266-5436-48a4-a27c-308718905d5d}</Project>
-      <Name>Helper</Name>
+      <Name>Sidekick</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

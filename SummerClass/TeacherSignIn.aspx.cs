@@ -1,11 +1,9 @@
 ﻿using BusinessLogicLayer;
 using EntityLayer;
-using Helper.Constant;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using static Helper.Types;
 using static Helper.Constant.PageName;
+using static Helper.Session;
 
 namespace SummerClass
 {
@@ -30,7 +28,7 @@ namespace SummerClass
                 return;
             }
 
-            Session.Add(SessionRole.TEACHER.ToString(), TXTBOX_TeacherName.Text);
+            Session.Add(GetSessionKey(SessionRole.STUDENT), TXTBOX_TeacherName.Text);
             Response.Redirect(ClassPage.CLASS_LIST);
         }
     }

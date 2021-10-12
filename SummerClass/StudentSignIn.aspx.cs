@@ -3,6 +3,7 @@ using BusinessLogicLayer;
 using EntityLayer;
 using static Helper.Constant.PageName;
 using static Helper.Types;
+using static Helper.Session;
 
 namespace SummerClass
 {
@@ -27,7 +28,7 @@ namespace SummerClass
                 return;
             }
 
-            Session.Add(SessionRole.STUDENT.ToString(), TXTBOX_StudentNumber.Text);
+            Session.Add(GetSessionKey(SessionRole.STUDENT), TXTBOX_StudentNumber.Text);
             Response.Redirect(ClassPage.CLASS_LIST);
         }
     }

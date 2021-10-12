@@ -1,6 +1,7 @@
-﻿using Helper.Constant;
-using System;
+﻿using System;
 using static Helper.Constant.PageName;
+using static Helper.Types;
+using static Helper.Session;
 
 namespace SummerClass
 {
@@ -8,8 +9,8 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove(TeacherColumn.TEACHER_NAME);
-            Response.Redirect(TeacherPage.TEACHER_SIGN_OUT);
+            Session.Remove(GetSessionKey(SessionRole.TEACHER));
+            Response.Redirect(TeacherPage.TEACHER_SIGN_IN);
         }
     }
 }

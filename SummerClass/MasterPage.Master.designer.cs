@@ -60,6 +60,24 @@ namespace SummerClass
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_SignOut;
 
         /// <summary>
+        /// LINK_StudentSignOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_StudentSignOut;
+
+        /// <summary>
+        /// LINK_TeacherSignOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_TeacherSignOut;
+
+        /// <summary>
         /// ContentPlaceHolder2 control.
         /// </summary>
         /// <remarks>

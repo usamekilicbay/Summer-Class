@@ -50,7 +50,8 @@
                 <li><a href="TeacherSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher Sign In</a></li>
             </ul>
             <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
-                <li><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
+                <li id="LINK_StudentSignOut" runat="server"><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
+                <li id="LINK_TeacherSignOut" runat="server"><a href="TeacherSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
             </ul>
         </div>
     </nav>

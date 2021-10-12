@@ -7,11 +7,26 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SessionRole currentSessionRole = SessionControl.GetCurrentSessionRole();
+            SessionRole currentSessionRole = Helper.Session.GetCurrentSessionRole();
+            Response.Write(currentSessionRole.ToString());
             UL_SignInAndSignUp.Visible = currentSessionRole == SessionRole.NON;
             UL_SignOut.Visible = currentSessionRole != SessionRole.NON;
             DD_Class.Visible = currentSessionRole != SessionRole.NON;
             DD_Student.Visible = currentSessionRole != SessionRole.NON;
+            LINK_StudentSignOut.Visible = currentSessionRole == SessionRole.STUDENT;
+            LINK_TeacherSignOut.Visible = currentSessionRole == SessionRole.TEACHER;
+
+            //switch (SessionControl.GetCurrentSessionRole())
+            //{
+            //    case SessionRole.NON:
+            //        break;
+            //    case SessionRole.STUDENT:
+            //        break;
+            //    case SessionRole.TEACHER:
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             //ALERT_Session.Visible = false;
 
