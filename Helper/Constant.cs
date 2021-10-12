@@ -4,19 +4,42 @@
     {
         public static class SQLQuery
         {
+            public const string ADD = "Add ";
+            public const string AND = "And ";
+            public const string DELETE = "Delete ";
+            public const string FROM = "From ";
+            public const string IN = "In ";
+            public const string INDEX = "Index ";
+            public const string INNER = "Inner ";
             public const string INSERT = "Insert ";
             public const string INTO = "Into ";
-            public const string UPDATE = "Update ";
-            public const string SET = "Set ";
-            public const string DELETE = "Delete ";
+            public const string IS = "Is ";
+            public const string JOIN = "Join ";
+            public const string LEFT = "Left ";
+            public const string NOT = "Not ";
+            public const string NULL = "Not ";
+            public const string ON = "On ";
+            public const string OR = "Or ";
+            public const string OUTER = "Outer ";
+            public const string RIGHT = "Right ";
             public const string SELECT = "Select ";
-            public const string FROM = "From ";
-            public const string WHERE = "Where ";
+            public const string SET = "Set ";
+            public const string TABLE = "Table ";
+            public const string UPDATE = "Update ";
             public const string VALUES = "Values ";
+            public const string WHERE = "Where ";
+
+            #region FRAQUENTLY USED
+
+            public const string INNER_JOIN = INNER + JOIN;
+            public const string INSERT_INTO = INSERT + INTO;
+            public const string OUTER_JOIN = OUTER + JOIN;
+            public const string SELECT_ALL_FROM = SELECT + " * " + FROM;
+
+            #endregion
 
             #region INSERT INTO
 
-            public const string INSERT_INTO = INSERT + INTO;
             public const string INSERT_INTO_APPEALS = INSERT_INTO + Table.APPEALS;
             public const string INSERT_INTO_CLASSES = INSERT_INTO + Table.CLASSES;
             public const string INSERT_INTO_STUDENTS = INSERT_INTO + Table.STUDENTS;
@@ -26,7 +49,6 @@
 
             #region SELECT ALL FROM
 
-            public const string SELECT_ALL_FROM = SELECT + " * " + FROM;
             public const string SELECT_ALL_FROM_APPEALS = SELECT_ALL_FROM + Table.APPEALS;
             public const string SELECT_ALL_FROM_CLASSES = SELECT_ALL_FROM + Table.CLASSES;
             public const string SELECT_ALL_FROM_STUDENTS = SELECT_ALL_FROM + Table.STUDENTS;
@@ -43,12 +65,21 @@
 
             #endregion
 
+            #region FROM "TABLE"
+
+            public const string FROM_APPEALS = FROM + Table.APPEALS;
+            public const string FROM_CLASSES = FROM + Table.CLASSES;
+            public const string FROM_STUDENTS = FROM + Table.STUDENTS;
+            public const string FROM_TEACHERS = FROM + Table.TEACHERS;
+
+            #endregion
+
             #region FROM "TABLE" WHERE
 
-            public const string FROM_APPEALS_WHERE = FROM + Table.APPEALS + WHERE;
-            public const string FROM_CLASSES_WHERE = FROM + Table.CLASSES + WHERE;
-            public const string FROM_STUDENTS_WHERE = FROM + Table.STUDENTS + WHERE;
-            public const string FROM_TEACHERS_WHERE = FROM + Table.TEACHERS + WHERE;
+            public const string FROM_APPEALS_WHERE = FROM_APPEALS + WHERE;
+            public const string FROM_CLASSES_WHERE = FROM_CLASSES + WHERE;
+            public const string FROM_STUDENTS_WHERE = FROM_STUDENTS + WHERE;
+            public const string FROM_TEACHERS_WHERE = FROM_TEACHERS + WHERE;
 
             #endregion
         }
@@ -57,15 +88,18 @@
 
         public static class Key
         {
+            public const string APPEAL = "Appeal";
+            public const string APPEAL_SPACE = "Appeal ";
+
             public const string CLASS = "Class";
             public const string CLASS_SPACE = "Class ";
-            
+
             public const string STUDENT = "Student";
             public const string STUDENT_SPACE = STUDENT + " ";
 
             public const string TEACHER = "Teacher";
             public const string TEACHER_SPACE = TEACHER + " ";
-         
+
             public const string BALANCE = "Balance";
             public const string BRANCH = "Branch";
             public const string ID = "ID";
@@ -82,6 +116,14 @@
 
         #region LABEL
 
+        public static class ClassLabel
+        {
+            public const string CLASS_ID = Key.CLASS_SPACE + Key.ID;
+            public const string CLASS_NAME = Key.CLASS_SPACE + Key.NAME;
+            public const string CLASS_REQUIRED_APPEAL = Key.CLASS_SPACE + Key.REQUIRED_APPEAL;
+            public const string CLASS_QUOTA = Key.CLASS_SPACE + Key.QUOTA;
+        }
+
         public static class StudentLabel
         {
             public const string STUDENT_ID = Key.STUDENT_SPACE + Key.ID;
@@ -93,12 +135,14 @@
             public const string STUDENT_STATUS = Key.STUDENT_SPACE + Key.STATUS;
         }
 
-        public static class ClassLabel
+        public static class TeacherLabel
         {
-            public const string CLASS_ID = Key.CLASS_SPACE + Key.ID;
-            public const string CLASS_NAME = Key.CLASS_SPACE + Key.NAME;
-            public const string CLASS_REQUIRED_APPEAL = Key.CLASS_SPACE + Key.REQUIRED_APPEAL;
-            public const string CLASS_QUOTA = Key.CLASS_SPACE + Key.QUOTA;
+            public const string TEACHER_ID = Key.TEACHER_SPACE + Key.ID;
+            public const string TEACHER_NAME = Key.TEACHER_SPACE + Key.NAME;
+            public const string TEACHER_PASSWORD = Key.TEACHER_SPACE + Key.PASSWORD;
+            public const string TEACHER_PHOTO = Key.TEACHER_SPACE + Key.PHOTO;
+            public const string TEACHER_BRANCH = Key.TEACHER_SPACE + Key.BRANCH;
+            public const string TEACHER_STATUS = Key.TEACHER_SPACE + Key.STATUS;
         }
 
         #endregion
@@ -106,19 +150,19 @@
         public static class Table
         {
             public const string TABLE = "TBL_";
-            public const string APPEALS = TABLE + "Appeals ";
-            public const string CLASSES = TABLE + "Classes ";
+            public const string APPEALS = TABLE + Key.APPEAL + "s ";
+            public const string CLASSES = TABLE + Key.CLASS + "es ";
             public const string STUDENTS = TABLE + Key.STUDENT + "s ";
-            public const string TEACHERS = TABLE + "Teachers ";
+            public const string TEACHERS = TABLE + Key.TEACHER + "s ";
         }
 
         #region DATABSE TABLE COLUMN
 
         public static class AppealColumn
         {
-            public const string APPEAL_ID = "AppealID";
-            public const string CLASS_ID = "ClassID";
-            public const string STUDENT_ID = Key.STUDENT + "ID";
+            public const string APPEAL_ID = Key.APPEAL + Key.ID;
+            public const string CLASS_ID = Key.CLASS + Key.ID;
+            public const string STUDENT_ID = Key.STUDENT + Key.ID;
         }
 
         public static class ClassColumn
@@ -192,12 +236,6 @@
                 public const string TEACHER_STATUS_PACIFY = Key.TEACHER + PACIFY_STATUS + FileExtension.ASPX;
                 public const string TEACHER_UPDATE = Key.TEACHER + UPDATE + FileExtension.ASPX;
             }
-        }
-
-        public static class SessionRoleKey
-        {
-            public const string STUDENT = Key.STUDENT + "";
-            public const string TEACHER = Key.TEACHER + "";
         }
 
         public static class FileExtension
