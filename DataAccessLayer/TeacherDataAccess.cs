@@ -1,5 +1,6 @@
 ﻿using EntityLayer;
 using Sidekick;
+using Sidekick.Constant;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -28,7 +29,10 @@ namespace DataAccessLayer
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             if (!sqlDataReader.Read())
+            {
+                sqlDataReader.Close();
                 return null;
+            }
 
             EntityTeacher entityTeacher = GetTeacherEntity(sqlDataReader);
 
@@ -70,9 +74,29 @@ namespace DataAccessLayer
             while (sqlDataReader.Read())
                 entityTeachers.Add(GetTeacherEntity(sqlDataReader));
 
+
             sqlDataReader.Close();
 
             return entityTeachers;
+        }
+
+        public static string GetTeacherBranch(int teacherBranch)
+        {
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT + ClassColumn.CLASS_NAME} {FROM_CLASSES + INNER_JOIN + Table.TEACHERS + ON} {Table.CLASSES.Trim()}.{ClassColumn.CLASS_ID}={Table.TEACHERS.Trim()}.{TeacherColumn.TEACHER_BRANCH} {WHERE + TeacherColumn.TEACHER_BRANCH} = {teacherBranch}", Connection.sqlConnection);
+            ConnectionHelper.OpenConnectionIfNot(sqlCommand);
+            SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+            if (!sqlDataReader.Read())
+            {
+                sqlDataReader.Close();
+                return "NULL";
+            }
+
+            string className = sqlDataReader[ClassColumn.CLASS_NAME].ToString();
+
+            sqlDataReader.Close();
+
+            return className;
         }
 
         private static EntityTeacher GetTeacherEntity(SqlDataReader sqlDataReader)

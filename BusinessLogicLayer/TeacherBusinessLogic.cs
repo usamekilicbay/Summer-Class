@@ -38,6 +38,11 @@ namespace BusinessLogicLayer
             return TeacherDataAccess.GetTeacherList();
         }
 
+        public static string GetTeacherBranch(int teacherBranch)
+        {
+            return TeacherDataAccess.GetTeacherBranch(teacherBranch);
+        }
+
         public static bool IsValidTeacher(EntityTeacher entityTeacher)
         {
             return !String.IsNullOrEmpty(entityTeacher.TeacherName) && !String.IsNullOrEmpty(entityTeacher.TeacherPassword) && !String.IsNullOrEmpty(entityTeacher.TeacherPhoto);
