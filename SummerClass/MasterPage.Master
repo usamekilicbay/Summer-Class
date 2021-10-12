@@ -19,40 +19,60 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="StudentList.aspx">Summer Class Registration</a>
             </div>
-            <ul class="nav navbar-nav">
-                <li><a href="StudentList.aspx">Home</a></li>
-                <li id="DD_Class" runat="server" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Class
+            <div id="Navbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="StudentList.aspx">Home</a></li>
+                    <li id="DD_Class" runat="server" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Class
                         <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="ClassList.aspx">Classes</a></li>
-                        <li><a href="ClassAppeal.aspx">Class Appeal</a></li>
-                    </ul>
-                </li>
-                <li id="DD_Student" runat="server" class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="ClassList.aspx">Classes</a></li>
+                            <li><a href="ClassAppeal.aspx">Class Appeal</a></li>
+                        </ul>
+                    </li>
+                    <li id="DD_Student" runat="server" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Student
                         <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="StudentList.aspx">Students</a></li>
-                        <li><a href="StudentCreate.aspx">New Student Registration</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Quotas</a></li>
-                <li>
-                    <button href="#" class="btn btn-warning navbar-btn">Help</button>
-                </li>
-            </ul>
-            <ul id="UL_SignInAndSignUp" runat="server" class="nav navbar-nav navbar-right">
-                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp; Sign Up</a></li>
-                <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Student Sign In</a></li>
-                <li><a href="TeacherSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher Sign In</a></li>
-            </ul>
-            <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
-                <li id="LINK_StudentSignOut" runat="server"><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
-                <li id="LINK_TeacherSignOut" runat="server"><a href="TeacherSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
-            </ul>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="StudentList.aspx">Students</a></li>
+                            <li><a href="StudentCreate.aspx">New Student Registration</a></li>
+                        </ul>
+                    </li>
+                    <li id="DD_Teacher" runat="server" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Teacher
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="TeacherSignIn.aspx">Teacher List</a></li>
+                            <li><a href="TeacherSignIn.aspx">New Teacher Registration</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Quotas</a></li>
+                    <li>
+                        <button href="#" class="btn btn-warning navbar-btn">Help</button>
+                    </li>
+                </ul>
+            </div>
+            <div id="Session">
+                <ul id="UL_SignInAndSignUp" runat="server" class="nav navbar-nav navbar-right">
+                    <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp;Sign Up</a></li>
+                    <li id="DD_SignIn" runat="server" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="StudentSignIn.aspx">
+                            <span class="glyphicon glyphicon-log-in"></span>&nbsp; Sign In &nbsp;<span class="caret">
+                            </span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="StudentSignIn.aspx"><span class="glyphicon glyphicon-user"></span>&nbsp; Student</a></li>
+                            <li><a href="TeacherSignIn.aspx"><span class="glyphicon glyphicon-education"></span>&nbsp; Teacher</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
+                    <li id="LINK_StudentSignOut" runat="server"><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
+                    <li id="LINK_TeacherSignOut" runat="server"><a href="TeacherSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
     <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>

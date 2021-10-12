@@ -11,8 +11,8 @@ namespace SummerClass
             Response.Write(currentSessionRole.ToString());
             UL_SignInAndSignUp.Visible = currentSessionRole == SessionRole.NON;
             UL_SignOut.Visible = currentSessionRole != SessionRole.NON;
-            DD_Class.Visible = currentSessionRole != SessionRole.NON;
-            DD_Student.Visible = currentSessionRole != SessionRole.NON;
+            //DD_Class.Visible = currentSessionRole != SessionRole.NON;
+            //DD_Student.Visible = currentSessionRole != SessionRole.NON;
             LINK_StudentSignOut.Visible = currentSessionRole == SessionRole.STUDENT;
             LINK_TeacherSignOut.Visible = currentSessionRole == SessionRole.TEACHER;
 

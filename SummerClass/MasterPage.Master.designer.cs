@@ -42,6 +42,15 @@ namespace SummerClass
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_Student;
 
         /// <summary>
+        /// DD_Teacher control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_Teacher;
+
+        /// <summary>
         /// UL_SignInAndSignUp control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace SummerClass
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_SignInAndSignUp;
+
+        /// <summary>
+        /// DD_SignIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_SignIn;
 
         /// <summary>
         /// UL_SignOut control.
