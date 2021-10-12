@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using DataAccessLayer;
 using EntityLayer;
-using static Helper.Types;
+using static Sidekick.Types;
 
 namespace BusinessLogicLayer
 {
