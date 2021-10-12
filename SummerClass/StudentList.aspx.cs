@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using System.Data.SqlClient;
-using BusinessLogicLayer;
-using DataAccessLayer;
-using EntityLayer;
+using static BusinessLogicLayer.StudentBusinessLogic;
 
 namespace SummerClass
 {
@@ -15,7 +7,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Repeater1.DataSource = StudentBusinessLogic.GetStudentList();
+            Repeater1.DataSource = GetStudentList();
             Repeater1.DataBind();
         }
     }

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="StudentList.aspx.cs" Inherits="SummerClass.StudentList" %>
 
-<%@ Import Namespace="Helper.Constant" %>
+<%@ Import Namespace="Sidekick.Constant" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
@@ -11,14 +11,14 @@
     </ul>
     <table class="table table-bordered table-hover ">
         <tr>
-            <th><%=StudentLabel.STUDENT_ID %></th>
-            <th><%=StudentLabel.STUDENT_NAME %></th>
-            <th><%=StudentLabel.STUDENT_PASSWORD %></th>
-            <th><%=StudentLabel.STUDENT_NUMBER %></th>
-            <th><%=StudentLabel.STUDENT_PASSWORD %></th>
-            <th><%=StudentLabel.STUDENT_PHOTO %></th>
-            <th><%=StudentLabel.STUDENT_BALANCE %></th>
-            <th><%=StudentLabel.STUDENT_STATUS %></th>
+            <th><%=StudentLabel.STUDENT_ID%></th>
+            <th><%=StudentLabel.STUDENT_NAME%></th>
+            <th><%=StudentLabel.STUDENT_PASSWORD%></th>
+            <th><%=StudentLabel.STUDENT_NUMBER%></th>
+            <th><%=StudentLabel.STUDENT_PASSWORD%></th>
+            <th><%=StudentLabel.STUDENT_PHOTO%></th>
+            <th><%=StudentLabel.STUDENT_BALANCE%></th>
+            <th><%=StudentLabel.STUDENT_STATUS%></th>
         </tr>
         <tbody>
             <asp:Repeater ID="Repeater1" runat="server">
@@ -33,10 +33,10 @@
                         <td><%#Eval(StudentColumn.STUDENT_BALANCE)%></td>
                         <td><%#Eval(StudentColumn.STUDENT_STATUS)%></td>
                         <td>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.StudentPage.STUDENT_STATUS_PACIFY}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' ID="HLINK_Pacify" CssClass="btn btn-danger" runat="server">Pacify
+                            <asp:HyperLink ID="HLINK_Pacify" runat="server" NavigateUrl='<%#$"~/{PageName.StudentPage.STUDENT_STATUS_PACIFY}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' CssClass="btn btn-danger">Pacify
                                 <span class="glyphicon glyphicon-ban-circle"></span>
                             </asp:HyperLink>
-                            <asp:HyperLink NavigateUrl='<%#$"~/{PageName.StudentPage.STUDENT_UPDATE}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update
+                            <asp:HyperLink ID="HLINK_Update" runat="server" NavigateUrl='<%#$"~/{PageName.StudentPage.STUDENT_UPDATE}?{StudentColumn.STUDENT_ID}={Eval(StudentColumn.STUDENT_ID)}"%>' CssClass="btn btn-success">Update
                                 <span class="glyphicon glyphicon-refresh"></span>
                             </asp:HyperLink>
                         </td>

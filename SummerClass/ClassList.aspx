@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.Master" AutoEventWireup="true" CodeBehind="ClassList.aspx.cs" Inherits="SummerClass.ClassList" %>
 
-<%@ Import Namespace="Helper.Constant" %>
+<%@ Import Namespace="Sidekick.Constant" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>

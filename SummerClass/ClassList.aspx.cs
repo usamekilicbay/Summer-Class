@@ -1,5 +1,5 @@
 ﻿using System;
-using BusinessLogicLayer;
+using static BusinessLogicLayer.ClassBusinessLogic;
 
 namespace SummerClass
 {
@@ -7,7 +7,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Repeater1.DataSource = ClassBusinessLogic.GetClassList();
+            Repeater1.DataSource = GetClassList();
             Repeater1.DataBind();
         }
     }
