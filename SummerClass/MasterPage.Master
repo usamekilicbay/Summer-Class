@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SummerClass.MasterPage" %>
 
-<%@ Import Namespace="Helper.Constant" %>
+<%@ Import Namespace="Sidekick.Constant" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +71,7 @@
                 <ul id="UL_SignOut" runat="server" class="nav navbar-nav navbar-right">
                     <li id="LINK_StudentSignOut" runat="server"><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
                     <li id="LINK_TeacherSignOut" runat="server"><a href="TeacherSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
+                    <li id="LINK_AdminSignOut" runat="server"><a href="StudentSignOut.aspx"><span class="glyphicon glyphicon-log-out"></span>&nbsp; Sign Out</a></li>
                 </ul>
             </div>
         </div>

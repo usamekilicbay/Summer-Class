@@ -77,6 +77,7 @@
     <Content Include="StudentList.aspx" />
     <Content Include="StudentSignOut.aspx" />
     <Content Include="StudentUpdate.aspx" />
+    <Content Include="TeacherList.aspx" />
     <Content Include="TeacherSignIn.aspx" />
     <Content Include="TeacherSignOut.aspx" />
     <Content Include="Web.config" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="StudentUpdate.aspx.designer.cs">
       <DependentUpon>StudentUpdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherList.aspx.cs">
+      <DependentUpon>TeacherList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TeacherList.aspx.designer.cs">
+      <DependentUpon>TeacherList.aspx</DependentUpon>
     </Compile>
     <Compile Include="TeacherSignIn.aspx.cs">
       <DependentUpon>TeacherSignIn.aspx</DependentUpon>
