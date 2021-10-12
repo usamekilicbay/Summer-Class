@@ -1,16 +1,18 @@
 ﻿using System;
-using static Helper.Types;
+using static Sidekick.Types;
 using static System.Web.HttpContext;
 
-namespace Helper
+namespace Sidekick
 {
     public static class Session
     {
         public static SessionRole GetCurrentSessionRole()
         {
-            if (Current.Session[SessionRole.TEACHER.ToString()] != null)
+            if (Current.Session[GetSessionKey(SessionRole.ADMIN)] != null)
+                return SessionRole.ADMIN;
+            else if (Current.Session[GetSessionKey(SessionRole.TEACHER)] != null)
                 return SessionRole.TEACHER;
-            else if (Current.Session[SessionRole.STUDENT.ToString()] != null)
+            else if (Current.Session[GetSessionKey(SessionRole.STUDENT)] != null)
                 return SessionRole.STUDENT;
             else
                 return SessionRole.NON;
