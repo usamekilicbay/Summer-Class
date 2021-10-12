@@ -1,11 +1,11 @@
 ﻿using EntityLayer;
-using Helper;
+using Sidekick;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using static Helper.Constant.SQLQuery;
-using static Helper.Constant.TeacherColumn;
-using static Helper.Types;
+using static Sidekick.Constant.SQLQuery;
+using static Sidekick.Constant.TeacherColumn;
+using static Sidekick.Types;
 
 namespace DataAccessLayer
 {

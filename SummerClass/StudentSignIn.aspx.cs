@@ -1,9 +1,9 @@
 ﻿using System;
 using BusinessLogicLayer;
 using EntityLayer;
-using static Helper.Constant.PageName;
-using static Helper.Types;
-using static Helper.Session;
+using static Sidekick.Constant.PageName;
+using static Sidekick.Types;
+using static Sidekick.Session;
 
 namespace SummerClass
 {

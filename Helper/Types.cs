@@ -1,4 +1,4 @@
-﻿namespace Helper
+﻿namespace Sidekick
 {
     public static class Types
     {
@@ -12,7 +12,8 @@
         {
             NON,
             STUDENT,
-            TEACHER
+            TEACHER,
+            ADMIN
         }
     }
 }

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using EntityLayer;
-using Helper;
-using static Helper.Constant.SQLQuery;
-using static Helper.Constant.StudentColumn;
-using static Helper.Types;
+using Sidekick;
+using static Sidekick.Constant.SQLQuery;
+using static Sidekick.Constant.StudentColumn;
+using static Sidekick.Types;
 
 namespace DataAccessLayer
 {

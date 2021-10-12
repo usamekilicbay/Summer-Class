@@ -8,7 +8,7 @@ using BusinessLogicLayer;
 using DataAccessLayer;
 using EntityLayer;
 using System.Data.SqlClient;
-using static Helper.Types;
+using static Sidekick.Types;
 
 namespace SummerClass
 {

@@ -1,8 +1,8 @@
 ﻿using System;
 using BusinessLogicLayer;
-using Helper.Constant;
-using static Helper.Constant.PageName;
-using static Helper.Types;
+using Sidekick.Constant;
+using static Sidekick.Constant.PageName;
+using static Sidekick.Types;
 
 namespace SummerClass
 {
