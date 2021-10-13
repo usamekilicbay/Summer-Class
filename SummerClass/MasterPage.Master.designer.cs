@@ -33,6 +33,24 @@ namespace SummerClass
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_Class;
 
         /// <summary>
+        /// LINK_ClassList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_ClassList;
+
+        /// <summary>
+        /// LINK_ClassAppeal control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_ClassAppeal;
+
+        /// <summary>
         /// DD_Student control.
         /// </summary>
         /// <remarks>
@@ -42,6 +60,33 @@ namespace SummerClass
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_Student;
 
         /// <summary>
+        /// LINK_StudentList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_StudentList;
+
+        /// <summary>
+        /// LINK_StudentCreate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_StudentCreate;
+
+        /// <summary>
+        /// LINK_StudentUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_StudentUpdate;
+
+        /// <summary>
         /// DD_Teacher control.
         /// </summary>
         /// <remarks>
@@ -49,6 +94,24 @@ namespace SummerClass
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl DD_Teacher;
+
+        /// <summary>
+        /// LINK_TeacherList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_TeacherList;
+
+        /// <summary>
+        /// LINK_TeacherCreate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl LINK_TeacherCreate;
 
         /// <summary>
         /// UL_SignInAndSignUp control.

@@ -1,5 +1,6 @@
 ﻿using System;
-using static Helper.Types;
+using static Sidekick.SessionManager;
+using static Sidekick.Types;
 
 namespace SummerClass
 {
@@ -7,39 +8,49 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SessionRole currentSessionRole = Helper.Session.GetCurrentSessionRole();
-            Response.Write(currentSessionRole.ToString());
-            UL_SignInAndSignUp.Visible = currentSessionRole == SessionRole.NON;
-            UL_SignOut.Visible = currentSessionRole != SessionRole.NON;
-            //DD_Class.Visible = currentSessionRole != SessionRole.NON;
-            //DD_Student.Visible = currentSessionRole != SessionRole.NON;
-            LINK_StudentSignOut.Visible = currentSessionRole == SessionRole.STUDENT;
-            LINK_TeacherSignOut.Visible = currentSessionRole == SessionRole.TEACHER;
+            if (Session[ID] != null)
+                Response.Write(Session[ID].ToString());
 
-            //switch (SessionControl.GetCurrentSessionRole())
-            //{
-            //    case SessionRole.NON:
-            //        break;
-            //    case SessionRole.STUDENT:
-            //        break;
-            //    case SessionRole.TEACHER:
-            //        break;
-            //    default:
-            //        break;
-            //}
+            SessionRole currentSessionRole = GetCurrentSessionRole();
 
-            //ALERT_Session.Visible = false;
+            bool isSessionRoleNoN = currentSessionRole == SessionRole.NON;
+            bool isSessionRoleStudent = currentSessionRole == SessionRole.STUDENT;
+            bool isSessionRoleTeacher = currentSessionRole == SessionRole.TEACHER;
+            bool isSessionRoleAdmin = currentSessionRole == SessionRole.ADMIN;
+            bool isSessionRoleAdminOrTeacher = isSessionRoleAdmin || isSessionRoleTeacher;
 
-            //if (!isSessionExist)
-            //{
-            //    //ALERT_Session.Attributes.CssStyle. = "alert alert-info";
-            //    ALERT_Session.Visible = true;
-            //    ALERT_Session.InnerText = "Successfully";
-            //    STRALERT_Session.InnerText = "Logged Out";
-            //    Thread.Sleep(2000);
-            //}
 
-            //ALERT_Session.Visible = false;
+            UL_SignInAndSignUp.Visible = isSessionRoleNoN;
+            UL_SignOut.Visible = !isSessionRoleNoN;
+
+            LINK_StudentSignOut.Visible = isSessionRoleStudent;
+            LINK_TeacherSignOut.Visible = isSessionRoleTeacher;
+            LINK_AdminSignOut.Visible = isSessionRoleAdmin;
+
+            LINK_ClassList.Visible = isSessionRoleAdminOrTeacher;
+            LINK_ClassAppeal.Visible = isSessionRoleStudent;
+            LINK_StudentCreate.Visible = isSessionRoleAdminOrTeacher;
+            LINK_StudentList.Visible = isSessionRoleAdminOrTeacher;
+            LINK_StudentUpdate.Visible = isSessionRoleStudent;
+            LINK_TeacherList.Visible = isSessionRoleAdmin;
+            LINK_TeacherCreate.Visible = isSessionRoleAdmin;
+
+            DD_Class.Visible = !isSessionRoleNoN;
+            DD_Student.Visible = !isSessionRoleNoN;
+            DD_Teacher.Visible = isSessionRoleAdminOrTeacher;
         }
+
+        //ALERT_Session.Visible = false;
+
+        //if (!isSessionExist)
+        //{
+        //    //ALERT_Session.Attributes.CssStyle. = "alert alert-info";
+        //    ALERT_Session.Visible = true;
+        //    ALERT_Session.InnerText = "Successfully";
+        //    STRALERT_Session.InnerText = "Logged Out";
+        //    Thread.Sleep(2000);
+        //}
+
+        //ALERT_Session.Visible = false;
     }
 }

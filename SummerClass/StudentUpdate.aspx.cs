@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using BusinessLogicLayer;
-using DataAccessLayer;
 using EntityLayer;
-using System.Data.SqlClient;
+using static Sidekick.Constant.PageName;
+using static Sidekick.Constant.StudentColumn;
+using static Sidekick.SessionManager;
 using static Sidekick.Types;
 
 namespace SummerClass
@@ -16,7 +12,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int studentID = Convert.ToInt32(Request.QueryString["StudentID"]);
+            int studentID = GetCurrentSessionRole() == SessionRole.STUDENT ? GetCurrentUserID() : Convert.ToInt32(Request.QueryString[STUDENT_ID]);
             TXTBOX_StudentID.Text = studentID.ToString();
             TXTBOX_StudentID.Enabled = false;
 
@@ -55,7 +51,7 @@ namespace SummerClass
             };
 
             StudentBusinessLogic.StudentUpdate(entityStudent);
-            Response.Redirect("StudentList.aspx");
+            Response.Redirect(StudentPage.STUDENT_LIST);
         }
     }
 }

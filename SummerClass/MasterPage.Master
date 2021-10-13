@@ -1,6 +1,7 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="SummerClass.MasterPage" %>
 
 <%@ Import Namespace="Sidekick.Constant" %>
+<%@ Import Namespace="Sidekick" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +28,8 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="ClassList.aspx">Classes</a></li>
-                            <li><a href="ClassAppeal.aspx">Class Appeal</a></li>
+                            <li id="LINK_ClassList" runat="server"><a href="ClassList.aspx">Classes</a></li>
+                            <li id="LINK_ClassAppeal" runat="server"><a href="ClassAppeal.aspx">Class Appeal</a></li>
                         </ul>
                     </li>
                     <li id="DD_Student" runat="server" class="dropdown">
@@ -36,8 +37,9 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="StudentList.aspx">Students</a></li>
-                            <li><a href="StudentCreate.aspx">New Student Registration</a></li>
+                            <li id="LINK_StudentList" runat="server"><a href="StudentList.aspx">Students</a></li>
+                            <li id="LINK_StudentCreate" runat="server"><a href="StudentCreate.aspx">New Student Registration</a></li>
+                            <li id="LINK_StudentUpdate" runat="server"><a href=<%= $"{PageName.StudentPage.STUDENT_UPDATE}?{StudentColumn.STUDENT_ID}={SessionManager.GetCurrentUserID()}"%>>Update Profile</a></li>
                         </ul>
                     </li>
                     <li id="DD_Teacher" runat="server" class="dropdown">
@@ -45,8 +47,8 @@
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="TeacherSignIn.aspx">Teacher List</a></li>
-                            <li><a href="TeacherSignIn.aspx">New Teacher Registration</a></li>
+                            <li id="LINK_TeacherList" runat="server"><a href="TeacherList.aspx">Teacher List</a></li>
+                            <li id="LINK_TeacherCreate" runat="server"><a href="TeacherSignIn.aspx">New Teacher Registration</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Quotas</a></li>
