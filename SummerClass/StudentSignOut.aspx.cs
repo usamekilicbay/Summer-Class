@@ -1,7 +1,7 @@
 ﻿using System;
 using static Sidekick.Constant.PageName;
 using static Sidekick.Types;
-using static Sidekick.Session;
+using static Sidekick.SessionManager;
 
 namespace SummerClass
 {
@@ -9,7 +9,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove(GetSessionKey(SessionRole.TEACHER));
+            Session.Remove(GetSessionRoleKey(SessionRole.TEACHER));
             Response.Redirect(StudentPage.STUDENT_SIGN_IN);
         }
     }
