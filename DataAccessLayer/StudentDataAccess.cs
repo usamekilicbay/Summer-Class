@@ -100,22 +100,23 @@ namespace DataAccessLayer
 
     public partial class StudentDataAccess
     {
-        public static bool StudentSignIn(EntityStudent entityStudent)
+        public static int StudentSignIn(EntityStudent entityStudent)
         {
             string studentNumberQuery = $"{STUDENT_NUMBER} = '{entityStudent.StudentNumber}'";
 
-            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {STUDENT_NUMBER}, {STUDENT_PASSWORD} {FROM_STUDENTS_WHERE} {studentNumberQuery}", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {STUDENT_ID}, {STUDENT_NUMBER}, {STUDENT_PASSWORD} {FROM_STUDENTS_WHERE} {studentNumberQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             if (!sqlDataReader.Read())
-                return false;
+                return -1;
 
+            int studentID = Convert.ToInt32(sqlDataReader[STUDENT_ID]);
             string studentPassword = sqlDataReader[STUDENT_PASSWORD].ToString();
 
             sqlDataReader.Close();
 
-            return String.Equals(entityStudent.StudentPassword, studentPassword);
+            return string.Equals(entityStudent.StudentPassword, studentPassword) ? studentID : -1;
         }
     }
 
