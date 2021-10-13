@@ -3,7 +3,7 @@ using EntityLayer;
 using System;
 using static Sidekick.Types;
 using static Sidekick.Constant.PageName;
-using static Sidekick.Session;
+using static Sidekick.SessionManager;
 
 namespace SummerClass
 {
@@ -28,7 +28,7 @@ namespace SummerClass
                 return;
             }
 
-            Session.Add(GetSessionKey(SessionRole.STUDENT), TXTBOX_TeacherName.Text);
+            Session.Add(GetSessionRoleKey(SessionRole.STUDENT), TXTBOX_TeacherName.Text);
             Response.Redirect(ClassPage.CLASS_LIST);
         }
     }
