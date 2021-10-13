@@ -3,7 +3,7 @@ using BusinessLogicLayer;
 using EntityLayer;
 using static Sidekick.Constant.PageName;
 using static Sidekick.Types;
-using static Sidekick.Session;
+using static Sidekick.SessionManager;
 
 namespace SummerClass
 {
@@ -22,13 +22,15 @@ namespace SummerClass
                 StudentPassword = TXTBOX_StudentPassword.Text
             };
 
-            if (!StudentBusinessLogic.StudentLogin(entityStudent))
+            int currentUserID = StudentBusinessLogic.StudentSigIn(entityStudent);
+
+            if (currentUserID < 0)
             {
                 Response.Write("Your Credentials are expired or wrong, please check them again");
                 return;
             }
 
-            Session.Add(GetSessionKey(SessionRole.STUDENT), TXTBOX_StudentNumber.Text);
+            Session.Add(GetSessionRoleKey(SessionRole.STUDENT), currentUserID);
             Response.Redirect(ClassPage.CLASS_LIST);
         }
     }
