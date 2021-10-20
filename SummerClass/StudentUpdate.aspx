@@ -46,6 +46,7 @@
                 </strong>
                 <asp:TextBox ID="TXTBOX_StudentBalance" runat="server" CssClass="form-control"></asp:TextBox>
             </div>
+            <br />
             <div>
                 <strong>
                     <asp:Label ID="LBL_StudentStatus" for="DDL_StudentStatus" runat="server" Text="Student Status:"></asp:Label>

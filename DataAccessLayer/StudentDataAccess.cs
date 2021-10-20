@@ -109,7 +109,10 @@ namespace DataAccessLayer
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             if (!sqlDataReader.Read())
+            {
+                sqlDataReader.Close();
                 return -1;
+            }
 
             int studentID = Convert.ToInt32(sqlDataReader[STUDENT_ID]);
             string studentPassword = sqlDataReader[STUDENT_PASSWORD].ToString();
