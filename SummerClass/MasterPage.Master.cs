@@ -8,8 +8,8 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session[ID] != null)
-                Response.Write(Session[ID].ToString());
+            //if (Session[ID] != null)
+            //    Response.Write(Session[ID].ToString());
 
             SessionRole currentSessionRole = GetCurrentSessionRole();
 
@@ -19,7 +19,7 @@ namespace SummerClass
             bool isCurrentSessionRoleAdmin = currentSessionRole == SessionRole.ADMIN;
             bool isCurrentSessionRoleAdminOrTeacher = isCurrentSessionRoleAdmin || isCurrentSessionRoleTeacher;
 
-            Response.Write(currentSessionRole);
+            //Response.Write(currentSessionRole);
 
             UL_SignInAndSignUp.Visible = isCurrentSessionRoleNoN;
             UL_SignOut.Visible = !isCurrentSessionRoleNoN;
