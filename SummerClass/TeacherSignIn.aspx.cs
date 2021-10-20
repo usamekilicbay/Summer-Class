@@ -22,14 +22,16 @@ namespace SummerClass
                 TeacherPassword = TXTBOX_TeacherPassword.Text
             };
 
-            if (!TeacherBusinessLogic.TeacherSignIn(entityTeacher))
+            int currentUserID = TeacherBusinessLogic.TeacherSignIn(entityTeacher);
+
+            if (currentUserID < 0)
             {
                 Response.Write("Your Credentials are expired or wrong, please check them again");
                 return;
             }
 
-            Session.Add(GetSessionRoleKey(SessionRole.STUDENT), TXTBOX_TeacherName.Text);
-            Response.Redirect(ClassPage.CLASS_LIST);
+            Session.Add(GetSessionRoleKey(SessionRole.TEACHER), currentUserID);
+            Response.Redirect(StudentPage.STUDENT_LIST);
         }
     }
 }

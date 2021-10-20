@@ -119,22 +119,26 @@ namespace DataAccessLayer
 
     public partial class TeacherDataAccess
     {
-        public static bool TeacherSignIn(EntityTeacher entityTeacher)
+        public static int TeacherSignIn(EntityTeacher entityTeacher)
         {
             string teacherNameQuery = $"{TEACHER_NAME} = '{entityTeacher.TeacherName}'";
 
-            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {TEACHER_NAME}, {TEACHER_PASSWORD} {FROM_TEACHERS_WHERE} {teacherNameQuery}", Connection.sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand($"{SELECT} {TEACHER_ID}, {TEACHER_NAME}, {TEACHER_PASSWORD} {FROM_TEACHERS_WHERE} {teacherNameQuery}", Connection.sqlConnection);
             ConnectionHelper.OpenConnectionIfNot(sqlCommand);
             SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
             if (!sqlDataReader.Read())
-                return false;
+            {
+                sqlDataReader.Close();
+                return -1;
+            }
 
+            int teacherID = Convert.ToInt32(sqlDataReader[TEACHER_ID]);
             string teacherPassword = sqlDataReader[TEACHER_PASSWORD].ToString();
 
             sqlDataReader.Close();
 
-            return String.Equals(entityTeacher.TeacherPassword, teacherPassword);
+            return string.Equals(entityTeacher.TeacherPassword, teacherPassword) ? teacherID : -1;
         }
     }
 

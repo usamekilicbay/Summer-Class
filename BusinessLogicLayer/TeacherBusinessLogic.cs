@@ -55,11 +55,14 @@ namespace BusinessLogicLayer
 
     public partial class TeacherBusinessLogic
     {
-        public static bool TeacherSignIn(EntityTeacher entityTeacher)
+        public static int TeacherSignIn(EntityTeacher entityTeacher)
         {
             bool isValidCredential = !String.IsNullOrEmpty(entityTeacher.TeacherName) && !String.IsNullOrEmpty(entityTeacher.TeacherPassword);
 
-            return isValidCredential && TeacherDataAccess.TeacherSignIn(entityTeacher);
+            if (!isValidCredential)
+                return -1;
+
+            return TeacherDataAccess.TeacherSignIn(entityTeacher);
         }
     }
 
