@@ -11,34 +11,26 @@ namespace SummerClass
             //if (Session[ID] != null)
             //    Response.Write(Session[ID].ToString());
 
-            SessionRole currentSessionRole = GetCurrentSessionRole();
+            //Response.Write(currentSessionRole)();
 
-            bool isCurrentSessionRoleNoN = currentSessionRole == SessionRole.NON;
-            bool isCurrentSessionRoleStudent = currentSessionRole == SessionRole.STUDENT;
-            bool isCurrentSessionRoleTeacher = currentSessionRole == SessionRole.TEACHER;
-            bool isCurrentSessionRoleAdmin = currentSessionRole == SessionRole.ADMIN;
-            bool isCurrentSessionRoleAdminOrTeacher = isCurrentSessionRoleAdmin || isCurrentSessionRoleTeacher;
+            UL_SignInAndSignUp.Visible = IsCurrentSessionRole.NON;
+            UL_SignOut.Visible = !IsCurrentSessionRole.NON;
 
-            //Response.Write(currentSessionRole);
+            LINK_StudentSignOut.Visible = IsCurrentSessionRole.STUDENT;
+            LINK_TeacherSignOut.Visible = IsCurrentSessionRole.TEACHER;
+            LINK_AdminSignOut.Visible = IsCurrentSessionRole.ADMIN;
 
-            UL_SignInAndSignUp.Visible = isCurrentSessionRoleNoN;
-            UL_SignOut.Visible = !isCurrentSessionRoleNoN;
+            LINK_ClassList.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            LINK_ClassAppeal.Visible = IsCurrentSessionRole.STUDENT;
+            LINK_StudentCreate.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            LINK_StudentList.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            LINK_StudentUpdate.Visible = IsCurrentSessionRole.STUDENT;
+            LINK_TeacherList.Visible = IsCurrentSessionRole.ADMIN;
+            LINK_TeacherCreate.Visible = IsCurrentSessionRole.ADMIN;
 
-            LINK_StudentSignOut.Visible = isCurrentSessionRoleStudent;
-            LINK_TeacherSignOut.Visible = isCurrentSessionRoleTeacher;
-            LINK_AdminSignOut.Visible = isCurrentSessionRoleAdmin;
-
-            LINK_ClassList.Visible = isCurrentSessionRoleAdminOrTeacher;
-            LINK_ClassAppeal.Visible = isCurrentSessionRoleStudent;
-            LINK_StudentCreate.Visible = isCurrentSessionRoleAdminOrTeacher;
-            LINK_StudentList.Visible = isCurrentSessionRoleAdminOrTeacher;
-            LINK_StudentUpdate.Visible = isCurrentSessionRoleStudent;
-            LINK_TeacherList.Visible = isCurrentSessionRoleAdmin;
-            LINK_TeacherCreate.Visible = isCurrentSessionRoleAdmin;
-
-            DD_Class.Visible = !isCurrentSessionRoleNoN;
-            DD_Student.Visible = !isCurrentSessionRoleNoN;
-            DD_Teacher.Visible = isCurrentSessionRoleAdminOrTeacher;
+            DD_Class.Visible = !IsCurrentSessionRole.NON;
+            DD_Student.Visible = !IsCurrentSessionRole.NON;
+            DD_Teacher.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
         }
 
         //ALERT_Session.Visible = false;

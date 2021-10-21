@@ -12,14 +12,12 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            int studentID = GetCurrentSessionRole() == SessionRole.STUDENT ? GetCurrentUserID() : Convert.ToInt32(Request.QueryString[STUDENT_ID]);
+            int studentID = IsCurrentSessionRole.STUDENT ? GetCurrentUserID() : Convert.ToInt32(Request.QueryString[STUDENT_ID]);
             TXTBOX_StudentID.Enabled = false;
 
-            bool isCurrentSessionRoleTeacherOrAdmin = GetCurrentSessionRole() == SessionRole.TEACHER || GetCurrentSessionRole() == SessionRole.ADMIN;
-
-            TXTBOX_StudentNumber.Enabled = isCurrentSessionRoleTeacherOrAdmin;
-            TXTBOX_StudentBalance.Enabled = isCurrentSessionRoleTeacherOrAdmin;
-            DDL_StudentStatus.Enabled = isCurrentSessionRoleTeacherOrAdmin;
+            TXTBOX_StudentNumber.Enabled = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            TXTBOX_StudentBalance.Enabled = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            DDL_StudentStatus.Enabled = IsCurrentSessionRole.ADMIN_OR_TEACHER;
 
             if (Page.IsPostBack)
                 return;
