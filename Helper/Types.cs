@@ -15,5 +15,11 @@
             TEACHER,
             ADMIN
         }
+
+        public enum SessionOperation
+        {
+            START,
+            END
+        }
     }
 }
