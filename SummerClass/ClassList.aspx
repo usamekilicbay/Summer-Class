@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <ul id="UL_ClassNavTabs"  runat="server" class="nav nav-tabs">
+    <ul id="UL_ClassNavTabs" runat="server" class="nav nav-tabs">
         <li class="active"><a href="ClassList.aspx">Classes</a> </li>
         <li><a href="ClassAppeal.aspx">New Class Appeal</a> </li>
     </ul>
@@ -15,6 +15,10 @@
             <th><%=ClassLabel.CLASS_NAME%></th>
             <th><%=ClassLabel.CLASS_REQUIRED_APPEAL%></th>
             <th><%=ClassLabel.CLASS_QUOTA%></th>
+            <% if (Sidekick.SessionManager.IsCurrentSessionRole.ADMIN_OR_TEACHER)
+                {%>
+            <th>Operations</th>
+            <% } %>
         </tr>
         <tbody>
             <asp:Repeater ID="Repeater1" runat="server">
@@ -25,10 +29,13 @@
                         <td><%#Eval(ClassColumn.CLASS_NAME) %></td>
                         <td><%#Eval(ClassColumn.CLASS_REQUIRED_APPEAL) %></td>
                         <td><%#Eval(ClassColumn.CLASS_QUOTA) %></td>
+                        <% if (Sidekick.SessionManager.IsCurrentSessionRole.ADMIN_OR_TEACHER)
+                            {%>
                         <td>
                             <asp:HyperLink NavigateUrl='<%#$"~/{PageName.ClassPage.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Delete" CssClass="btn btn-danger" runat="server">Delete</asp:HyperLink>
                             <asp:HyperLink NavigateUrl='<%#$"~/{PageName.ClassPage.CLASS_DELETE}?{ClassColumn.CLASS_ID}={Eval(ClassColumn.CLASS_ID)}"%>' ID="HLINK_Update" CssClass="btn btn-success" runat="server">Update</asp:HyperLink>
                         </td>
+                        <%} %>
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
