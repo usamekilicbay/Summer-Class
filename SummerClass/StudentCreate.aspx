@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <ul class="nav nav-tabs">
+    <ul id="UL_StudentNavTabs" runat="server" class="nav nav-tabs">
         <li><a href="StudentList.aspx">Students</a> </li>
         <li class="active"><a href="StudentCreate.aspx">New Student Registraiton</a> </li>
     </ul>

@@ -15,6 +15,15 @@ namespace SummerClass
     {
 
         /// <summary>
+        /// UL_StudentNavTabs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl UL_StudentNavTabs;
+
+        /// <summary>
         /// FORM_NewStudentRegistration control.
         /// </summary>
         /// <remarks>

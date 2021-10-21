@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <ul class="nav nav-tabs">
+    <ul id="UL_ClassNavTabs"  runat="server" class="nav nav-tabs">
         <li class="active"><a href="ClassList.aspx">Classes</a> </li>
         <li><a href="ClassAppeal.aspx">New Class Appeal</a> </li>
     </ul>

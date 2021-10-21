@@ -5,7 +5,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
-    <ul class="nav nav-tabs">
+    <ul id="UL_StudentNavTabs" runat="server" class="nav nav-tabs">
         <li class="active"><a href="StudentList.aspx">Students</a></li>
         <li><a href="StudentCreate.aspx">New Student Registration</a></li>
     </ul>
@@ -13,12 +13,12 @@
         <tr>
             <th><%=StudentLabel.STUDENT_ID%></th>
             <th><%=StudentLabel.STUDENT_NAME%></th>
-            <th><%=StudentLabel.STUDENT_PASSWORD%></th>
             <th><%=StudentLabel.STUDENT_NUMBER%></th>
             <th><%=StudentLabel.STUDENT_PASSWORD%></th>
             <th><%=StudentLabel.STUDENT_PHOTO%></th>
             <th><%=StudentLabel.STUDENT_BALANCE%></th>
             <th><%=StudentLabel.STUDENT_STATUS%></th>
+            <th>Operations</th>
         </tr>
         <tbody>
             <asp:Repeater ID="Repeater1" runat="server">

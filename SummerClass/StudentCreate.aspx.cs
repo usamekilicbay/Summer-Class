@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using BusinessLogicLayer;
-using DataAccessLayer;
 using EntityLayer;
+using Sidekick;
 
 namespace SummerClass
 {
@@ -14,7 +9,8 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (SessionManager.IsCurrentSessionRole.ADMIN_OR_TEACHER)
+                UL_StudentNavTabs.Visible = true;
         }
 
         protected void BTN_SaveStudent_Click(object sender, EventArgs e)
