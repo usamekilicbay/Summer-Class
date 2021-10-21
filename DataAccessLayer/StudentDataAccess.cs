@@ -55,7 +55,7 @@ namespace DataAccessLayer
 
         public static bool ChangeStudentStatus(int studentID, RoleStatus studentStatus)
         {
-            string studentIDQuery = $"{STUDENT_STATUS} = '{studentID}'";
+            string studentIDQuery = $"{STUDENT_ID} = '{studentID}'";
             string studentStatusQuery = $"{STUDENT_STATUS} = '{Convert.ToBoolean(studentStatus)}'";
 
             SqlCommand sqlCommand = new SqlCommand($"{UPDATE_STUDENTS_SET} {studentStatusQuery} {WHERE} {studentIDQuery}", Connection.sqlConnection);
