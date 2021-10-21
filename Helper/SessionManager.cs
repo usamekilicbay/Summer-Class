@@ -7,6 +7,15 @@ namespace Sidekick
 {
     public static class SessionManager
     {
+        public static class IsCurrentSessionRole
+        {
+            public static bool NON;
+            public static bool STUDENT;
+            public static bool TEACHER;
+            public static bool ADMIN;
+            public static bool ADMIN_OR_TEACHER;
+        }
+
         public static SessionRole GetCurrentSessionRole()
         {
             if (IsSessionKeyExist(GetSessionRoleKey(SessionRole.ADMIN)))
@@ -42,6 +51,15 @@ namespace Sidekick
         public static bool IsSessionKeyExist(string sessionKey)
         {
             return Current.Session[sessionKey] != null;
+        }
+
+        public static void UpdateCurrentStatusRole()
+        {
+            IsCurrentSessionRole.NON = GetCurrentSessionRole() == SessionRole.NON;
+            IsCurrentSessionRole.STUDENT= GetCurrentSessionRole() == SessionRole.TEACHER;
+            IsCurrentSessionRole.TEACHER = GetCurrentSessionRole() == SessionRole.TEACHER;
+            IsCurrentSessionRole.ADMIN = GetCurrentSessionRole() == SessionRole.ADMIN;
+            IsCurrentSessionRole.ADMIN_OR_TEACHER = IsCurrentSessionRole.ADMIN || IsCurrentSessionRole.TEACHER;
         }
     }
 }
