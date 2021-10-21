@@ -30,7 +30,7 @@ namespace SummerClass
                 return;
             }
 
-            Session.Add(GetSessionRoleKey(SessionRole.STUDENT), currentUserID);
+            ChangeSessionStatus(SessionRole.STUDENT, SessionOperation.START, currentUserID);
             Response.Redirect(ClassPage.CLASS_LIST);
         }
     }

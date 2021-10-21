@@ -9,7 +9,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Session.Remove(GetSessionRoleKey(SessionRole.STUDENT));
+            ChangeSessionStatus(SessionRole.STUDENT, SessionOperation.END);
             Response.Redirect(StudentPage.STUDENT_SIGN_IN);
         }
     }
