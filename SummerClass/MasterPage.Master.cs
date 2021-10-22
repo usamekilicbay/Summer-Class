@@ -1,6 +1,5 @@
 ﻿using System;
 using static Sidekick.SessionManager;
-using static Sidekick.Types;
 
 namespace SummerClass
 {
@@ -8,10 +7,7 @@ namespace SummerClass
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session[ID] != null)
-            //    Response.Write(Session[ID].ToString());
-
-            //Response.Write(currentSessionRole)();
+            //Response.Write(GetCurrentSessionRole());
 
             UL_SignInAndSignUp.Visible = IsCurrentSessionRole.NON;
             UL_SignOut.Visible = !IsCurrentSessionRole.NON;
@@ -20,7 +16,7 @@ namespace SummerClass
             LINK_TeacherSignOut.Visible = IsCurrentSessionRole.TEACHER;
             LINK_AdminSignOut.Visible = IsCurrentSessionRole.ADMIN;
 
-            LINK_ClassList.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
+            LINK_ClassList.Visible = !IsCurrentSessionRole.NON;
             LINK_ClassAppeal.Visible = IsCurrentSessionRole.STUDENT;
             LINK_StudentCreate.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
             LINK_StudentList.Visible = IsCurrentSessionRole.ADMIN_OR_TEACHER;
