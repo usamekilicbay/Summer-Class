@@ -1,6 +1,5 @@
 ﻿using System;
 using static Sidekick.Types;
-using static Sidekick.Constant.Key;
 using static System.Web.HttpContext;
 
 namespace Sidekick
@@ -53,12 +52,31 @@ namespace Sidekick
             return Current.Session[sessionKey] != null;
         }
 
-        public static void UpdateCurrentStatusRole()
+        public static void ChangeSessionStatus(SessionRole sessionRole = SessionRole.NON, SessionOperation sessionOperation = SessionOperation.END, int currentUserID = 0)
         {
-            IsCurrentSessionRole.NON = GetCurrentSessionRole() == SessionRole.NON;
-            IsCurrentSessionRole.STUDENT= GetCurrentSessionRole() == SessionRole.TEACHER;
-            IsCurrentSessionRole.TEACHER = GetCurrentSessionRole() == SessionRole.TEACHER;
-            IsCurrentSessionRole.ADMIN = GetCurrentSessionRole() == SessionRole.ADMIN;
+            switch (sessionOperation)
+            {
+                case SessionOperation.START:
+                    Current.Session.Add(GetSessionRoleKey(sessionRole), currentUserID);
+                    UpdateCurrentStatus(sessionRole);
+                    break;
+                case SessionOperation.END:
+                    Current.Session.Remove(GetSessionRoleKey(sessionRole));
+                    Current.Session.Add(GetSessionRoleKey(SessionRole.NON), currentUserID);
+                    UpdateCurrentStatus(SessionRole.NON);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        private static void UpdateCurrentStatus(SessionRole sessionRole)
+        {
+            IsCurrentSessionRole.NON = sessionRole == SessionRole.NON;
+            IsCurrentSessionRole.STUDENT = sessionRole == SessionRole.STUDENT;
+            IsCurrentSessionRole.TEACHER = sessionRole == SessionRole.TEACHER;
+            IsCurrentSessionRole.ADMIN = sessionRole == SessionRole.ADMIN;
             IsCurrentSessionRole.ADMIN_OR_TEACHER = IsCurrentSessionRole.ADMIN || IsCurrentSessionRole.TEACHER;
         }
     }
