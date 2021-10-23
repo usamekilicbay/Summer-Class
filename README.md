@@ -10,6 +10,5 @@
 * CRUD operations
 * Session management
 
-\
 &nbsp;
-[![YouTube Presentation Video](http://i3.ytimg.com/vi/lnmdXEDLVdU/maxresdefault.jpg)](https://www.youtube.com/watch?v=lnmdXEDLVdU "YouTube Presentation Video")
+[![YouTube Presentation Video](https://i.ytimg.com/vi/lnmdXEDLVdU/maxresdefault.jpg)](https://www.youtube.com/watch?v=lnmdXEDLVdU "YouTube Presentation Video")
