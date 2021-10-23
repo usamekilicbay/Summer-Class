@@ -12,4 +12,4 @@
 
 \
 &nbsp;
-[![YouTube Presentation](http://i3.ytimg.com/vi/lnmdXEDLVdU/maxresdefault.jpg)](https://www.youtube.com/watch?v=lnmdXEDLVdU "YouTube Presentation Video")
+[![YouTube Presentation Video](http://i3.ytimg.com/vi/lnmdXEDLVdU/maxresdefault.jpg)](https://www.youtube.com/watch?v=lnmdXEDLVdU "YouTube Presentation Video")
